@@ -169,6 +169,7 @@ const mapDispatchToProps = dispatch => ({
     onRefreshPopular: (storeName, url, pageSize) => dispatch(actions.onRefreshPopular(storeName, url, pageSize)),
     onLoadMorePopular: (storeName, pageIndex, pageSize, items, callBack) => dispatch(actions.onLoadMorePopular(storeName, pageIndex, pageSize, items, callBack)),
 });
+//注意：connect只是个function，并不应定非要放在export后面
 const PopularTabPage = connect(mapStateToProps, mapDispatchToProps)(PopularTab)
 
 
