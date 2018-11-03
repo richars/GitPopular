@@ -2,9 +2,11 @@ import {createStackNavigator, createSwitchNavigator} from "react-navigation";
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import FetchDemoPage from '../page/FetchDemoPage';
+import AsyncStorageDemoPage from '../page/AsyncStorageDemoPage';
 import DetailPage from '../page/DetailPage';
 import {connect} from 'react-redux';
 import {createReactNavigationReduxMiddleware, reduxifyNavigator} from 'react-navigation-redux-helpers';
+
 export const rootCom = 'Init';//设置根路由
 
 const InitNavigator = createStackNavigator({
@@ -30,6 +32,12 @@ const MainNavigator = createStackNavigator({
     },
     FetchDemoPage: {
         screen: FetchDemoPage,
+        navigationOptions: {
+            // header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+        }
+    },
+    AsyncStorageDemoPage: {
+        screen: AsyncStorageDemoPage,
         navigationOptions: {
             // header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         }

@@ -62,10 +62,17 @@ class PopularTab extends Component<Props> {
                 <Button
                     title={"Fetch 使用"}
                     onPress={() => {
-                    NavigationUtil.goPage({
-                        navigation: this.props.navigation
-                    }, "FetchDemoPage")
-                }}/>
+                        NavigationUtil.goPage({
+                            navigation: this.props.navigation
+                        }, "FetchDemoPage")
+                    }}/>
+                <Button
+                    title={"AsyncStorage 使用"}
+                    onPress={() => {
+                        NavigationUtil.goPage({
+                            navigation: this.props.navigation
+                        }, "AsyncStorageDemoPage")
+                    }}/>
             </View>
         );
     }
