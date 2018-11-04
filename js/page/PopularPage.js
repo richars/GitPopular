@@ -7,6 +7,7 @@ import NavigationUtil from '../navigator/NavigationUtil'
 import PopularItem from '../common/PopularItem'
 import Toast from 'react-native-easy-toast'
 import NavigationBar from '../common/NavigationBar';
+import {DeviceInfo} from 'react-native';
 
 const URL = 'https://api.github.com/search/repositories?q=';
 const QUERY_STR = '&sort=stars';
@@ -50,13 +51,14 @@ export default class PopularPage extends Component<Props> {
                     scrollEnabled: true,//是否支持 选项卡滚动，默认false
                     style: {
                         backgroundColor: '#678',//TabBar 的背景颜色
+                        height: 30//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
                     },
                     indicatorStyle: styles.indicatorStyle,//标签指示器的样式
                     labelStyle: styles.labelStyle,//文字的样式
                 }
             }
         );
-        return <View style={{flex: 1, marginTop: 30}}>
+        return <View style={{flex: 1, marginTop: DeviceInfo.isIPhoneX_deprecated ? 30 : 0}}>
             {navigationBar}
             <TabNavigator/>
         </View>
@@ -189,7 +191,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     tabStyle: {
-        minWidth: 50
+        // minWidth: 50 //fix minWidth会导致tabStyle初次加载时闪烁
+        padding: 0
     },
     indicatorStyle: {
         height: 2,
@@ -197,9 +200,7 @@ const styles = StyleSheet.create({
     },
     labelStyle: {
         fontSize: 13,
-        marginTop: 6,
-        marginBottom: 6
-
+        margin: 0,
     },
     indicatorContainer: {
         alignItems: "center"

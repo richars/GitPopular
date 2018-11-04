@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {StyleSheet, ActivityIndicator, Text, View, FlatList, RefreshControl} from 'react-native';
+import {StyleSheet, ActivityIndicator, Text, View, FlatList, RefreshControl, DeviceInfo} from 'react-native';
 import {connect} from 'react-redux';
 import actions from '../action/index'
 import {createMaterialTopTabNavigator,} from "react-navigation";
 import NavigationUtil from '../navigator/NavigationUtil'
-import PopularItem from '../common/PopularItem'
+import TrendingItem from '../common/TrendingItem'
 import Toast from 'react-native-easy-toast'
 import NavigationBar from '../common/NavigationBar';
 
@@ -50,13 +50,14 @@ export default class TrendingPage extends Component<Props> {
                     scrollEnabled: true,//是否支持 选项卡滚动，默认false
                     style: {
                         backgroundColor: '#678',//TabBar 的背景颜色
+                        height: 30//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
                     },
                     indicatorStyle: styles.indicatorStyle,//标签指示器的样式
                     labelStyle: styles.labelStyle,//文字的样式
                 }
             }
         );
-        return <View style={{flex: 1, marginTop: 30}}>
+        return <View style={{flex: 1, marginTop: DeviceInfo.isIPhoneX_deprecated ? 30 : 0}}>
             {navigationBar}
             <TabNavigator/>
         </View>
@@ -112,7 +113,7 @@ class TrendingTab extends Component<Props> {
 
     renderItem(data) {
         const item = data.item;
-        return <PopularItem
+        return <TrendingItem
             item={item}
             onSelect={() => {
 
@@ -137,7 +138,7 @@ class TrendingTab extends Component<Props> {
                 <FlatList
                     data={store.projectModes}
                     renderItem={data => this.renderItem(data)}
-                    keyExtractor={item => "" + item.id}
+                    keyExtractor={item => "" + (item.id || item.fullName)}
                     refreshControl={
                         <RefreshControl
                             title={'Loading'}
@@ -189,7 +190,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     tabStyle: {
-        minWidth: 50
+        // minWidth: 50 //fix minWidth会导致tabStyle初次加载时闪烁
+        padding: 0
     },
     indicatorStyle: {
         height: 2,
@@ -197,9 +199,7 @@ const styles = StyleSheet.create({
     },
     labelStyle: {
         fontSize: 13,
-        marginTop: 6,
-        marginBottom: 6
-
+        margin: 0,
     },
     indicatorContainer: {
         alignItems: "center"
