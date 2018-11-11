@@ -1,29 +1,17 @@
 import React, {Component} from 'react';
-import {StyleSheet, ScrollView, Text, View, FlatList, RefreshControl} from 'react-native';
+import {Alert, ScrollView, StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import actions from '../action/index'
-import {createMaterialTopTabNavigator,} from "react-navigation";
 import NavigationUtil from '../navigator/NavigationUtil'
-import PopularItem from '../common/PopularItem'
-import Toast from 'react-native-easy-toast'
 import NavigationBar from '../common/NavigationBar';
-import {DeviceInfo} from 'react-native';
-import FavoriteDao from "../expand/dao/FavoriteDao";
-import {FLAG_STORAGE} from "../expand/dao/DataStore";
-import FavoriteUtil from "../util/FavoriteUtil";
-import EventBus from "react-native-event-bus";
-import EventTypes from "../util/EventTypes";
-import {FLAG_LANGUAGE} from "../expand/dao/LanguageDao";
+import LanguageDao, {FLAG_LANGUAGE} from "../expand/dao/LanguageDao";
 import BackPressComponent from "../common/BackPressComponent";
-import LanguageDao from "../expand/dao/LanguageDao";
 import ViewUtil from "../util/ViewUtil";
 import CheckBox from 'react-native-check-box'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import ArrayUtil from "../util/ArrayUtil";
 
-const URL = 'https://api.github.com/search/repositories?q=';
-const QUERY_STR = '&sort=stars';
 const THEME_COLOR = '#678';
-const favoriteDao = new FavoriteDao(FLAG_STORAGE.flag_popular);
 type Props = {};
 
 class CustomKeyPage extends Component<Props> {
@@ -76,7 +64,13 @@ class CustomKeyPage extends Component<Props> {
         const {flag, isRemoveKey} = props.navigation.state.params;
         let key = flag === FLAG_LANGUAGE.flag_key ? "keys" : "languages";
         if (isRemoveKey && !original) {
-
+            //如果state中的keys为空则从props中取
+            return state && state.keys && state.keys.length !== 0 && state.keys || props.language[key].map(val => {
+                return {//注意：不直接修改props，copy一份
+                    ...val,
+                    checked: false
+                };
+            });
         } else {
             return props.language[key];
         }
@@ -88,7 +82,22 @@ class CustomKeyPage extends Component<Props> {
     }
 
     onSave() {
-
+        if (this.changeValues.length === 0) {
+            NavigationUtil.goBack(this.props.navigation);
+            return;
+        }
+        let keys;
+        if (this.isRemoveKey) {//移除标签的特殊处理
+            for (let i = 0, l = this.changeValues.length; i < l; i++) {
+                ArrayUtil.remove(keys = CustomKeyPage._keys(this.props, true), this.changeValues[i], "name");
+            }
+        }
+        //更新本地数据
+        this.languageDao.save(keys || this.state.keys);
+        const {onLoadLanguage} = this.props;
+        //更新store
+        onLoadLanguage(this.params.flag);
+        NavigationUtil.goBack(this.props.navigation);
     }
 
     renderView() {
@@ -98,7 +107,7 @@ class CustomKeyPage extends Component<Props> {
         let views = [];
         for (let i = 0, l = len; i < l; i += 2) {
             views.push(
-                <View keys={i}>
+                <View key={i}>
                     <View style={styles.item}>
                         {this.renderCheckBox(dataArray[i], i)}
                         {i + 1 < len && this.renderCheckBox(dataArray[i + 1], i + 1)}
@@ -111,15 +120,34 @@ class CustomKeyPage extends Component<Props> {
     }
 
     onClick(data, index) {
-
+        data.checked = !data.checked;
+        ArrayUtil.updateArray(this.changeValues, data);
+        this.state.keys[index] = data;//更新state以便显示选中状态
+        this.setState({
+            keys: this.state.keys
+        })
     }
 
     onBack() {
-        NavigationUtil.goBack(this.props.navigation)
+        if (this.changeValues.length > 0) {
+            Alert.alert('提示', '要保存修改吗？',
+                [
+                    {
+                        text: '否', onPress: () => {
+                            NavigationUtil.goBack(this.props.navigation)
+                        }
+                    }, {
+                    text: '是', onPress: () => {
+                        this.onSave();
+                    }
+                }
+                ])
+        } else {
+            NavigationUtil.goBack(this.props.navigation)
+        }
     }
 
     _checkedImage(checked) {
-        const {theme} = this.params;
         return <Ionicons
             name={checked ? 'ios-checkbox' : 'md-square-outline'}
             size={20}
@@ -132,7 +160,7 @@ class CustomKeyPage extends Component<Props> {
         return <CheckBox
             style={{flex: 1, padding: 10}}
             onClick={() => this.onClick(data, index)}
-            isChecked={data.isChecked}
+            isChecked={data.checked}
             leftText={data.name}
             checkedImage={this._checkedImage(true)}
             unCheckedImage={this._checkedImage(false)}
