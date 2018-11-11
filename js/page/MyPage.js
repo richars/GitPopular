@@ -44,7 +44,17 @@ class MyPage extends Component<Props> {
     }
 
     onClick(menu) {
-
+        let RouteName, params = {};
+        switch (menu) {
+            case MORE_MENU.Tutorial:
+                RouteName = 'WebViewPage';
+                params.title = '教程';
+                params.url = 'https://coding.m.imooc.com/classindex.html?cid=89';
+                break
+        }
+        if (RouteName){
+            NavigationUtil.goPage(params,RouteName);
+        }
     }
 
     getItem(menu) {
@@ -61,8 +71,6 @@ class MyPage extends Component<Props> {
                 title={'我的'}
                 statusBar={statusBar}
                 style={{backgroundColor: THEME_COLOR}}
-                rightButton={this.getRightButton()}
-                leftButton={this.getLeftButton()}
             />;
         return (
             <View style={GlobalStyles.root_container}>
@@ -153,7 +161,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row'
     },
-    groupTitle:{
+    groupTitle: {
         marginLeft: 10,
         marginTop: 10,
         marginBottom: 5,
