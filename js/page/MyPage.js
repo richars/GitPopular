@@ -7,42 +7,13 @@ import NavigationBar from '../common/NavigationBar';
 import Feather from 'react-native-vector-icons/Feather'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import {MORE_MENU} from "../common/MORE_MENU";
-import GlobalStyles from "../res/GlobalStyles";
+import GlobalStyles from "../res/styles/GlobalStyles";
 import ViewUtil from "../util/ViewUtil";
 
 const THEME_COLOR = '#678';
 type Props = {};
 
 class MyPage extends Component<Props> {
-    getRightButton() {
-        return <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                onPress={() => {
-                }}
-            >
-                <View style={{padding: 5, marginRight: 8}}>
-                    <Feather
-                        name={'search'}
-                        size={24}
-                        style={{color: 'white'}}
-                    />
-                </View>
-
-            </TouchableOpacity>
-        </View>
-    }
-
-    getLeftButton(callBack) {
-        return <TouchableOpacity
-            style={{padding: 8, paddingLeft: 12}}
-            onPress={callBack}>
-            <Ionicons
-                name={'ios-arrow-back'}
-                size={26}
-                style={{color: 'white'}}/>
-        </TouchableOpacity>
-    }
-
     onClick(menu) {
         let RouteName, params = {};
         switch (menu) {
@@ -50,7 +21,10 @@ class MyPage extends Component<Props> {
                 RouteName = 'WebViewPage';
                 params.title = '教程';
                 params.url = 'https://coding.m.imooc.com/classindex.html?cid=89';
-                break
+                break;
+            case MORE_MENU.About:
+                RouteName = 'AboutPage';
+                break;
         }
         if (RouteName){
             NavigationUtil.goPage(params,RouteName);
