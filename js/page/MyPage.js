@@ -10,13 +10,14 @@ import {MORE_MENU} from "../common/MORE_MENU";
 import GlobalStyles from "../res/styles/GlobalStyles";
 import ViewUtil from "../util/ViewUtil";
 import {FLAG_LANGUAGE} from "../expand/dao/LanguageDao";
+import actions from "../action";
 
-const THEME_COLOR = '#678';
 type Props = {};
 
 class MyPage extends Component<Props> {
     onClick(menu) {
-        let RouteName, params = {};
+        const {theme} = this.props;
+        let RouteName, params = {theme};
         switch (menu) {
             case MORE_MENU.Tutorial:
                 RouteName = 'WebViewPage';
@@ -25,6 +26,10 @@ class MyPage extends Component<Props> {
                 break;
             case MORE_MENU.About:
                 RouteName = 'AboutPage';
+                break;
+            case MORE_MENU.Custom_Theme:
+                const {onShowCustomThemeView} = this.props;
+                onShowCustomThemeView(true);
                 break;
             case MORE_MENU.Sort_Key:
                 RouteName = 'SortKeyPage';
@@ -52,19 +57,21 @@ class MyPage extends Component<Props> {
     }
 
     getItem(menu) {
-        return ViewUtil.getMenuItem(() => this.onClick(menu), menu, THEME_COLOR);
+        const {theme} = this.props;
+        return ViewUtil.getMenuItem(() => this.onClick(menu), menu, theme.themeColor);
     }
 
     render() {
+        const {theme} = this.props;
         let statusBar = {
-            backgroundColor: THEME_COLOR,
+            backgroundColor: theme.themeColor,
             barStyle: 'light-content',
         };
         let navigationBar =
             <NavigationBar
                 title={'我的'}
                 statusBar={statusBar}
-                style={{backgroundColor: THEME_COLOR}}
+                style={theme.styles.navBar}
             />;
         return (
             <View style={GlobalStyles.root_container}>
@@ -80,7 +87,7 @@ class MyPage extends Component<Props> {
                                 size={40}
                                 style={{
                                     marginRight: 10,
-                                    color: THEME_COLOR
+                                    color: theme.themeColor,
                                 }}
                             />
                             <Text>GitHub Popular</Text>
@@ -91,7 +98,7 @@ class MyPage extends Component<Props> {
                             style={{
                                 marginRight: 10,
                                 alignSelf: 'center',
-                                color: THEME_COLOR,
+                                color: theme.themeColor,
                             }}/>
                     </TouchableOpacity>
                     <View style={GlobalStyles.line}/>
@@ -131,12 +138,15 @@ class MyPage extends Component<Props> {
     }
 }
 
-const mapStateToProps = state => ({});
-
-const mapDispatchToProps = dispatch => ({
-    onThemeChange: (theme) => dispatch(onThemeChange(theme)),
+const mapStateToProps = state => ({
+    theme: state.theme.theme,
 });
 
+const mapDispatchToProps = dispatch => ({
+    onShowCustomThemeView: (show) => dispatch(actions.onShowCustomThemeView(show)),
+});
+
+//注意：connect只是个function，并不应定非要放在export后面
 export default connect(mapStateToProps, mapDispatchToProps)(MyPage);
 const styles = StyleSheet.create({
     container: {
