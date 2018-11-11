@@ -3,6 +3,7 @@ import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import WebViewPage from '../page/WebViewPage';
 import DetailPage from '../page/DetailPage';
+import SortKeyPage from '../page/SortKeyPage';
 import CustomKeyPage from '../page/CustomKeyPage';
 import AboutPage from '../page/about/AboutPage';
 import AboutMePage from '../page/about/AboutMePage';
@@ -52,6 +53,12 @@ const MainNavigator = createStackNavigator({
     },
     CustomKeyPage: {
         screen: CustomKeyPage,
+        navigationOptions: {
+            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+        }
+    },
+    SortKeyPage: {
+        screen: SortKeyPage,
         navigationOptions: {
             header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         }
