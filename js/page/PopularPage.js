@@ -15,6 +15,7 @@ import EventBus from "react-native-event-bus";
 import EventTypes from "../util/EventTypes";
 import {FLAG_LANGUAGE} from "../expand/dao/LanguageDao";
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import AnalyticsUtil from "../util/AnalyticsUtil";
 const URL = 'https://api.github.com/search/repositories?q=';
 const QUERY_STR = '&sort=stars';
 const favoriteDao = new FavoriteDao(FLAG_STORAGE.flag_popular);
@@ -46,6 +47,7 @@ class PopularPage extends Component<Props> {
         const {theme} = this.props;
         return <TouchableOpacity
             onPress={() => {
+                AnalyticsUtil.track("SearchButtonClick");
                 NavigationUtil.goPage({theme}, 'SearchPage')
             }}
         >

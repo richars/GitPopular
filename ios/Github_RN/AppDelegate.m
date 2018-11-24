@@ -6,9 +6,12 @@
  */
 
 #import "AppDelegate.h"
-
+#import "RNUMConfigure.h"
+#import "UMAnalytics/MobClick.h"
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "RNUMConfigure.h"
+#import "Constants.h"
 
 @implementation AppDelegate
 
@@ -31,5 +34,10 @@
   [self.window makeKeyAndVisible];
   return YES;
 }
-
+-(void)initUmeng{
+  //UMeng 统计
+  [MobClick setScenarioType:E_UM_NORMAL];
+  [UMConfigure setLogEnabled:YES];
+  [RNUMConfigure initWithAppkey:UM_AppKey channel:UM_ChannelId];
+}
 @end
