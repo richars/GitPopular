@@ -1,9 +1,13 @@
 package com.github_rn;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.socialize.UMShareAPI;
+
+import org.devio.trackshare.ShareModule;
 
 public class MainActivity extends ReactActivity {
 
@@ -23,8 +27,13 @@ public class MainActivity extends ReactActivity {
         MobclickAgent.setSessionContinueMillis(1000);
         //统计的场景
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_DUM_NORMAL);
+        ShareModule.initSocialSDK(this);
     }
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
     public void onResume() {
         super.onResume();
         MobclickAgent.onResume(this);

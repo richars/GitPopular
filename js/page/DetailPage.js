@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {WebView, StyleSheet, TouchableOpacity, View, DeviceInfo} from 'react-native';
 import NavigationBar from '../common/NavigationBar'
 import ViewUtil from "../util/ViewUtil";
+import share from "../res/data/share";
+import ShareUtil from "../util/ShareUtil";
 
 const TRENDING_URL = 'https://github.com/';
 type Props = {};
@@ -73,7 +75,10 @@ export default class DetailPage extends Component<Props> {
                     />
                 </TouchableOpacity>
                 {ViewUtil.getShareButton(() => {
-
+                    let shareApp = share.share_app;
+                    ShareUtil.shareboard(shareApp.content, shareApp.imgUrl, this.url, shareApp.title, [0, 1, 2, 3, 4, 5, 6], (code, message) => {
+                        console.log("result:" + code + message);
+                    });
                 })}
             </View>
         )

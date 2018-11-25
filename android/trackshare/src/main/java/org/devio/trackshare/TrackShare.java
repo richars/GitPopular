@@ -5,6 +5,9 @@ import android.content.Context;
 import android.os.Build;
 
 import com.umeng.commonsdk.UMConfigure;
+import com.umeng.socialize.PlatformConfig;
+
+import org.devio.trackshare.util.Constants;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -18,10 +21,15 @@ public class TrackShare {
      * @param context
      */
     public static void init(Context context) {
+        PlatformConfig.setWeixin(Constants.KEY_WEIXIN,Constants.SECRET_WEIXIN);
+        PlatformConfig.setSinaWeibo(Constants.KEY_WEIBO, Constants.SECRET_WEIBO,"http://sns.whalecloud.com");
+        PlatformConfig.setQQZone(Constants.KEY_QQ, Constants.SECRET_QQ);
+
         initRN("react-native", "1.0");
         //接口一共五个参数，其中第一个参数为Context，第二个参数为友盟Appkey，第三个参数为channel，第四个参数为应用类型（手机或平板），第五个参数为push的secret（如果没有使用push，可以为空）
-        UMConfigure.init(context, "57fb0aa1e0f55a6c61001a51", "official", UMConfigure.DEVICE_TYPE_PHONE, null);
+        UMConfigure.init(context, "5bdc4982b465f5309e000531", "official", UMConfigure.DEVICE_TYPE_PHONE, null);
         UMConfigure.setLogEnabled(BuildConfig.DEBUG);
+
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)

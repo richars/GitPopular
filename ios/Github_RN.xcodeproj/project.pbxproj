@@ -58,6 +58,7 @@
 		E8145BF54B774C9F847F64F3 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95DE33A98C4046978E7FD893 /* Entypo.ttf */; };
 		F43FC33821A96B2100BAC768 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC33521A96B2100BAC768 /* RNUMConfigure.m */; };
 		F43FC33921A96B2100BAC768 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC33621A96B2100BAC768 /* UMAnalyticsModule.m */; };
+		F43FC37121A9803600BAC768 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC37021A9803600BAC768 /* UMShareModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -401,6 +402,8 @@
 		F43FC33621A96B2100BAC768 /* UMAnalyticsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMAnalyticsModule.m; path = ../../../../Downloads/UMAnalyticsModule.m; sourceTree = "<group>"; };
 		F43FC33721A96B2100BAC768 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNUMConfigure.h; path = ../../../../Downloads/RNUMConfigure.h; sourceTree = "<group>"; };
 		F43FC33A21A96B6E00BAC768 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F43FC34821A9803600BAC768 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMShareModule.h; sourceTree = "<group>"; };
+		F43FC37021A9803600BAC768 /* UMShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMShareModule.m; sourceTree = "<group>"; };
 		F9016D2526F59FD75E3600E4 /* libPods-Github_RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Github_RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944DCC8D8164415A79D0348 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -544,6 +547,8 @@
 		13B07FAE1A68108700A75B9A /* Github_RN */ = {
 			isa = PBXGroup;
 			children = (
+				F43FC34821A9803600BAC768 /* UMShareModule.h */,
+				F43FC37021A9803600BAC768 /* UMShareModule.m */,
 				F43FC33721A96B2100BAC768 /* RNUMConfigure.h */,
 				F43FC33521A96B2100BAC768 /* RNUMConfigure.m */,
 				F43FC33421A96B2100BAC768 /* UMAnalyticsModule.h */,
@@ -814,7 +819,12 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = Y3MLDMF5L7;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = Y3MLDMF5L7;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1265,10 +1275,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Github_RN/Pods-Github_RN-resources.sh",
 				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1322,6 +1334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43FC37121A9803600BAC768 /* UMShareModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				F43FC33921A96B2100BAC768 /* UMAnalyticsModule.m in Sources */,
@@ -1378,6 +1391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y3MLDMF5L7;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1409,6 +1423,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = Y3MLDMF5L7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1436,8 +1451,11 @@
 			baseConfigurationReference = 82E7EA5E565F6EEADFD0AA50 /* Pods-Github_RN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = Y3MLDMF5L7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1449,8 +1467,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Github-RN";
 				PRODUCT_NAME = Github_RN;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1460,7 +1479,10 @@
 			baseConfigurationReference = 78B142B3FED822A66073AE62 /* Pods-Github_RN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3MLDMF5L7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1472,8 +1494,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Github-RN";
 				PRODUCT_NAME = Github_RN;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

@@ -9,6 +9,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import org.devio.trackshare.TrackShare;
 import org.devio.trackshare.TrackShareReactPackage;
 
 import java.util.Arrays;
@@ -46,5 +47,6 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    TrackShare.init(this);
   }
 }

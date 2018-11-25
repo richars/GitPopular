@@ -5,8 +5,8 @@ import NavigationUtil from "../../navigator/NavigationUtil";
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import GlobalStyles from '../../res/styles/GlobalStyles'
 import ViewUtil from "../../util/ViewUtil";
-
-const THEME_COLOR = '#678';
+import ShareUtil from '../../util/ShareUtil'
+import share from '../../res/data/share.json'
 export const FLAG_ABOUT = {flag_about: 'about', flag_about_me: 'about_me'};
 export default class AboutCommon {
     constructor(props, updateState) {
@@ -46,7 +46,21 @@ export default class AboutCommon {
     }
 
     onShare() {
+        let shareApp;
+        const {flagAbout} = this.props;
+        if (flagAbout === FLAG_ABOUT.flag_about_me) {
+            shareApp = share.share_app;
+        } else {
+            shareApp = share.share_blog;
+        }
 
+        ShareUtil.shareboard(shareApp.content, shareApp.imgUrl, shareApp.url, shareApp.title, [0, 1, 2, 3, 4, 5, 6], (code, message) => {
+            console.log("result:" + code + message);
+        });
+        //第三方登录
+        // ShareUtil.auth(0,e=>{
+        //     console.log("result:" + e);
+        // })
     }
 
     getParallaxRenderConfig(params) {

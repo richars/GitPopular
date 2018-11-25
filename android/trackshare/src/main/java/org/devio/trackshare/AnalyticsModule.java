@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by wangfei on 17/8/28.
+ * 统计分析模块
  */
-
 public class AnalyticsModule extends ReactContextBaseJavaModule {
     private ReactApplicationContext context;
     private boolean isGameInited = false;
+
     public AnalyticsModule(ReactApplicationContext reactContext) {
         super(reactContext);
         context = reactContext;
@@ -34,6 +34,7 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
     public String getName() {
         return "UMAnalyticsModule";
     }
+
     @ReactMethod
     private void initGame() {
         UMGameAgent.init(context);
@@ -41,31 +42,35 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
         MobclickAgent.setScenarioType(context, MobclickAgent.EScenarioType.E_UM_GAME);
         isGameInited = true;
     }
+
     /********************************U-App统计*********************************/
     @ReactMethod
     public void onPageStart(String mPageName) {
-        android.util.Log.e("xxxxxx","onPageStart="+mPageName);
+        android.util.Log.e("xxxxxx", "onPageStart=" + mPageName);
 
         MobclickAgent.onPageStart(mPageName);
     }
 
     @ReactMethod
     public void onPageEnd(String mPageName) {
-        android.util.Log.e("xxxxxx","onPageEnd="+mPageName);
+        android.util.Log.e("xxxxxx", "onPageEnd=" + mPageName);
 
         MobclickAgent.onPageEnd(mPageName);
 
     }
+
     @ReactMethod
     public void onEvent(String eventId) {
         MobclickAgent.onEvent(context, eventId);
     }
+
     @ReactMethod
-    public void onEventWithLable(String eventId,String eventLabel) {
+    public void onEventWithLable(String eventId, String eventLabel) {
         MobclickAgent.onEvent(context, eventId, eventLabel);
     }
+
     @ReactMethod
-    public void onEventWithMap(String eventId,ReadableMap map) {
+    public void onEventWithMap(String eventId, ReadableMap map) {
         Map<String, String> rMap = new HashMap<String, String>();
         ReadableMapKeySetIterator iterator = map.keySetIterator();
         while (iterator.hasNextKey()) {
@@ -84,8 +89,9 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
         }
         MobclickAgent.onEvent(context, eventId, rMap);
     }
+
     @ReactMethod
-    public void onEventWithMapAndCount(String eventId,ReadableMap map,int value) {
+    public void onEventWithMapAndCount(String eventId, ReadableMap map, int value) {
         Map<String, String> rMap = new HashMap();
         ReadableMapKeySetIterator iterator = map.keySetIterator();
         while (iterator.hasNextKey()) {
@@ -104,13 +110,15 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
         }
         MobclickAgent.onEventValue(context, eventId, rMap, value);
     }
+
     /********************************U-App(Game)统计*********************************/
     @ReactMethod
     public void track(String eventName) {
-        UMADplus.track(context,eventName);
+        UMADplus.track(context, eventName);
     }
+
     @ReactMethod
-    public void trackWithMap(String eventID,ReadableMap property) {
+    public void trackWithMap(String eventID, ReadableMap property) {
         Map<String, Object> map = new HashMap();
         ReadableMapKeySetIterator iterator = property.keySetIterator();
         while (iterator.hasNextKey()) {
@@ -131,20 +139,23 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
         UMADplus.track(context, eventID, map);
 
     }
+
     @ReactMethod
     public void registerSuperProperty(ReadableMap map) {
         ReadableNativeMap map2 = (ReadableNativeMap) map;
-        Map<String, Object> map3  = map2.toHashMap();
-        for (String key:map3.keySet()){
+        Map<String, Object> map3 = map2.toHashMap();
+        for (String key : map3.keySet()) {
             UMADplus.registerSuperProperty(context, key, map3.get(key));
         }
 
     }
+
     @ReactMethod
     public void unregisterSuperProperty(String propertyName) {
         UMADplus.unregisterSuperProperty(context, propertyName);
 
     }
+
     @ReactMethod
     public void getSuperProperty(String propertyName, Callback callback) {
         try {
@@ -160,11 +171,13 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
         String result = UMADplus.getSuperProperties(context);
         callback.invoke(result);
     }
+
     @ReactMethod
     public void clearSuperProperties() {
         UMADplus.clearSuperProperties(context);
 
     }
+
     @ReactMethod
     public void setFirstLaunchEvent(ReadableArray array) {
         List<String> list = new ArrayList();
@@ -183,6 +196,7 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
         }
         UMADplus.setFirstLaunchEvent(context, list);
     }
+
     /********************************U-Dplus*********************************/
     @ReactMethod
     public void profileSignInWithPUID(String puid) {
@@ -239,8 +253,7 @@ public class AnalyticsModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     @SuppressWarnings("unused")
-    public void exchange(double currencyAmount, String currencyType, double virtualAmount, int channel,
-        String orderId) {
+    public void exchange(double currencyAmount, String currencyType, double virtualAmount, int channel, String orderId) {
         if (!isGameInited) {
             initGame();
         }
