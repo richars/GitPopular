@@ -58,11 +58,11 @@
 		DB83613E7ADD48F3BE879DA2 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F944DCC8D8164415A79D0348 /* AntDesign.ttf */; };
 		E8145BF54B774C9F847F64F3 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95DE33A98C4046978E7FD893 /* Entypo.ttf */; };
 		EEBAC2789D4546AAA2A5D536 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C22F6A5FE5D480DA64DBAB2 /* libz.tbd */; };
-		F43FC33821A96B2100BAC768 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC33521A96B2100BAC768 /* RNUMConfigure.m */; };
-		F43FC33921A96B2100BAC768 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC33621A96B2100BAC768 /* UMAnalyticsModule.m */; };
-		F43FC37121A9803600BAC768 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC37021A9803600BAC768 /* UMShareModule.m */; };
 		F4BFBCE721AA9A150093B013 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F4BFBCE521AA9A150093B013 /* assets */; };
 		F4BFBCE821AA9A150093B013 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = F4BFBCE621AA9A150093B013 /* main.jsbundle */; };
+		F4BFBD2F21AAA8440093B013 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2921AAA8430093B013 /* RNUMConfigure.m */; };
+		F4BFBD3021AAA8440093B013 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2B21AAA8430093B013 /* UMAnalyticsModule.m */; };
+		F4BFBD3121AAA8440093B013 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2C21AAA8430093B013 /* UMShareModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -418,15 +418,15 @@
 		D1B1CEEC3FB24900853B3A49 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		D3645C60C78A4EE7AA437650 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		E3F7B832B52A4AFA83FBA1CA /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
-		F43FC33421A96B2100BAC768 /* UMAnalyticsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMAnalyticsModule.h; path = ../../../../Downloads/UMAnalyticsModule.h; sourceTree = "<group>"; };
-		F43FC33521A96B2100BAC768 /* RNUMConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNUMConfigure.m; path = ../../../../Downloads/RNUMConfigure.m; sourceTree = "<group>"; };
-		F43FC33621A96B2100BAC768 /* UMAnalyticsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMAnalyticsModule.m; path = ../../../../Downloads/UMAnalyticsModule.m; sourceTree = "<group>"; };
-		F43FC33721A96B2100BAC768 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNUMConfigure.h; path = ../../../../Downloads/RNUMConfigure.h; sourceTree = "<group>"; };
 		F43FC33A21A96B6E00BAC768 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		F43FC34821A9803600BAC768 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMShareModule.h; sourceTree = "<group>"; };
-		F43FC37021A9803600BAC768 /* UMShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMShareModule.m; sourceTree = "<group>"; };
 		F4BFBCE521AA9A150093B013 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../bundles/assets; sourceTree = "<group>"; };
 		F4BFBCE621AA9A150093B013 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = ../bundles/main.jsbundle; sourceTree = "<group>"; };
+		F4BFBD2921AAA8430093B013 /* RNUMConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNUMConfigure.m; path = Github_RN/RNUMConfigure.m; sourceTree = "<group>"; };
+		F4BFBD2A21AAA8430093B013 /* UMAnalyticsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMAnalyticsModule.h; path = Github_RN/UMAnalyticsModule.h; sourceTree = "<group>"; };
+		F4BFBD2B21AAA8430093B013 /* UMAnalyticsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMAnalyticsModule.m; path = Github_RN/UMAnalyticsModule.m; sourceTree = "<group>"; };
+		F4BFBD2C21AAA8430093B013 /* UMShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMShareModule.m; path = Github_RN/UMShareModule.m; sourceTree = "<group>"; };
+		F4BFBD2D21AAA8430093B013 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNUMConfigure.h; path = Github_RN/RNUMConfigure.h; sourceTree = "<group>"; };
+		F4BFBD2E21AAA8430093B013 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMShareModule.h; path = Github_RN/UMShareModule.h; sourceTree = "<group>"; };
 		F9016D2526F59FD75E3600E4 /* libPods-Github_RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Github_RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944DCC8D8164415A79D0348 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -574,16 +574,16 @@
 			children = (
 				F4BFBCE521AA9A150093B013 /* assets */,
 				F4BFBCE621AA9A150093B013 /* main.jsbundle */,
-				F43FC34821A9803600BAC768 /* UMShareModule.h */,
-				F43FC37021A9803600BAC768 /* UMShareModule.m */,
-				F43FC33721A96B2100BAC768 /* RNUMConfigure.h */,
-				F43FC33521A96B2100BAC768 /* RNUMConfigure.m */,
-				F43FC33421A96B2100BAC768 /* UMAnalyticsModule.h */,
-				F43FC33621A96B2100BAC768 /* UMAnalyticsModule.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				F4BFBD2D21AAA8430093B013 /* RNUMConfigure.h */,
+				F4BFBD2921AAA8430093B013 /* RNUMConfigure.m */,
+				F4BFBD2A21AAA8430093B013 /* UMAnalyticsModule.h */,
+				F4BFBD2B21AAA8430093B013 /* UMAnalyticsModule.m */,
+				F4BFBD2E21AAA8430093B013 /* UMShareModule.h */,
+				F4BFBD2C21AAA8430093B013 /* UMShareModule.m */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -1393,11 +1393,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43FC37121A9803600BAC768 /* UMShareModule.m in Sources */,
+				F4BFBD3121AAA8440093B013 /* UMShareModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				F43FC33921A96B2100BAC768 /* UMAnalyticsModule.m in Sources */,
-				F43FC33821A96B2100BAC768 /* RNUMConfigure.m in Sources */,
+				F4BFBD3021AAA8440093B013 /* UMAnalyticsModule.m in Sources */,
+				F4BFBD2F21AAA8440093B013 /* RNUMConfigure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
