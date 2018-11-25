@@ -4,7 +4,7 @@ import NavigationBar from '../common/NavigationBar'
 import ViewUtil from "../util/ViewUtil";
 import share from "../res/data/share";
 import ShareUtil from "../util/ShareUtil";
-
+import SafeAreaViewPlus from "../common/SafeAreaViewPlus";
 const TRENDING_URL = 'https://github.com/';
 type Props = {};
 const THEME_COLOR = '#678';
@@ -103,7 +103,9 @@ export default class DetailPage extends Component<Props> {
         />;
 
         return (
-            <View style={styles.container}>
+            <SafeAreaViewPlus
+                topColor={theme.themeColor}
+            >
                 {navigationBar}
                 <WebView
                     ref={webView => this.webView = webView}
@@ -111,7 +113,7 @@ export default class DetailPage extends Component<Props> {
                     onNavigationStateChange={e => this.onNavigationStateChange(e)}
                     source={{uri: this.state.url}}
                 />
-            </View>
+            </SafeAreaViewPlus>
         );
     }
 }

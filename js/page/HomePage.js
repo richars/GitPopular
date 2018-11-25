@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
 import NavigationUtil from "../navigator/NavigationUtil";
 import DynamicTabNavigator from "../navigator/DynamicTabNavigator";
 import {NavigationActions} from "react-navigation";
@@ -7,6 +6,7 @@ import connect from "react-redux/es/connect/connect";
 import BackPressComponent from "../common/BackPressComponent";
 import CustomTheme from '../page/CustomTheme';
 import actions from "../action";
+import SafeAreaViewPlus from "../common/SafeAreaViewPlus";
 
 type Props = {};
 
@@ -49,17 +49,21 @@ class HomePage extends Component<Props> {
     }
 
     render() {
+        const {theme} = this.props;
         NavigationUtil.navigation = this.props.navigation;
-        return <View style={{flex: 1}}>
+        return <SafeAreaViewPlus
+            topColor={theme.themeColor}
+        >
             <DynamicTabNavigator/>
             {this.renderCustomThemeView()}
-        </View>;
+        </SafeAreaViewPlus>;
     }
 }
 
 const mapStateToProps = state => ({
     nav: state.nav,
     customThemeViewVisible: state.theme.customThemeViewVisible,
+    theme: state.theme.theme,
 });
 
 const mapDispatchToProps = dispatch => ({

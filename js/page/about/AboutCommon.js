@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, Dimensions, StyleSheet, Platform} from "react-native";
+import {DeviceInfo,View, Text, Image, Dimensions, StyleSheet, Platform} from "react-native";
 import BackPressComponent from "../../common/BackPressComponent";
 import NavigationUtil from "../../navigator/NavigationUtil";
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
@@ -129,7 +129,9 @@ export default class AboutCommon {
 const window = Dimensions.get('window');
 const AVATAR_SIZE = 90;
 const PARALLAX_HEADER_HEIGHT = 270;
-const STICKY_HEADER_HEIGHT = (Platform.OS === 'ios') ? GlobalStyles.nav_bar_height_ios + 20 : GlobalStyles.nav_bar_height_android;
+const TOP = (Platform.OS === 'ios') ? 20 + (DeviceInfo.isIPhoneX_deprecated ? 24 : 0) : 0;
+const STICKY_HEADER_HEIGHT = (Platform.OS === 'ios') ? GlobalStyles.nav_bar_height_ios + TOP : GlobalStyles.nav_bar_height_android;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -144,8 +146,8 @@ const styles = StyleSheet.create({
     },
     stickySection: {
         height: STICKY_HEADER_HEIGHT,
-        width: 300,
-        justifyContent: 'flex-end'
+        alignItems: 'center',
+        paddingTop:TOP
     },
     stickySectionText: {
         color: 'white',
@@ -159,10 +161,10 @@ const styles = StyleSheet.create({
         top: 0,
         bottom: 0,
         paddingRight: 8,
-        paddingTop: (Platform.OS === 'ios') ? 20 : 0,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        paddingTop:TOP
     },
     fixedSectionText: {
         color: '#999',

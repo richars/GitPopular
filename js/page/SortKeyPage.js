@@ -12,6 +12,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import ArrayUtil from "../util/ArrayUtil";
 import SortableListView from 'react-native-sortable-listview'
+import SafeAreaViewPlus from "../common/SafeAreaViewPlus";
+import GlobalStyles from "../res/styles/GlobalStyles";
 
 const THEME_COLOR = '#678';
 type Props = {};
@@ -144,28 +146,8 @@ class SortKeyPage extends Component<Props> {
         }
     }
 
-    _checkedImage(checked) {
-        return <Ionicons
-            name={checked ? 'ios-checkbox' : 'md-square-outline'}
-            size={20}
-            style={{
-                color: THEME_COLOR,
-            }}/>
-    }
-
-    renderCheckBox(data, index) {
-        return <CheckBox
-            style={{flex: 1, padding: 10}}
-            onClick={() => this.onClick(data, index)}
-            isChecked={data.checked}
-            leftText={data.name}
-            checkedImage={this._checkedImage(true)}
-            unCheckedImage={this._checkedImage(false)}
-        />
-    }
-
     render() {
-        const {theme}=this.params;
+        const {theme} = this.params;
         let title = this.params.flag === FLAG_LANGUAGE.flag_language ? '语言排序' : '标签排序';
         let navigationBar = <NavigationBar
             title={title}
@@ -173,7 +155,10 @@ class SortKeyPage extends Component<Props> {
             style={theme.styles.navBar}
             rightButton={ViewUtil.getRightButton('保存', () => this.onSave())}
         />;
-        return <View style={styles.container}>
+        return <SafeAreaViewPlus
+            style={GlobalStyles.root_container}
+            topColor={theme.themeColor}
+        >
             {navigationBar}
             <SortableListView
                 data={this.state.checkedArray}
@@ -184,13 +169,13 @@ class SortKeyPage extends Component<Props> {
                 }}
                 renderRow={row => <SortCell data={row} {...this.params}/>}
             />
-        </View>
+        </SafeAreaViewPlus>
     }
 }
 
 class SortCell extends Component {
     render() {
-        const {theme}=this.props;
+        const {theme} = this.props;
         return <TouchableHighlight
             underlayColor={'#eee'}
             style={this.props.data.checked ? styles.item : styles.hidden}
