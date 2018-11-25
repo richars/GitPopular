@@ -31,6 +31,9 @@ class MyPage extends Component<Props> {
                 const {onShowCustomThemeView} = this.props;
                 onShowCustomThemeView(true);
                 break;
+            case MORE_MENU.CodePush:
+                RouteName = 'CodePushPage';
+                break;
             case MORE_MENU.Sort_Key:
                 RouteName = 'SortKeyPage';
                 params.flag = FLAG_LANGUAGE.flag_key;
@@ -132,6 +135,8 @@ class MyPage extends Component<Props> {
                     <View style={GlobalStyles.line}/>
                     {/*反馈*/}
                     {this.getItem(MORE_MENU.Feedback)}
+                    <View style={GlobalStyles.line}/>
+                    {this.getItem(MORE_MENU.CodePush)}
                 </ScrollView>
             </View>
         );

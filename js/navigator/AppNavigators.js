@@ -8,6 +8,7 @@ import SearchPage from '../page/SearchPage';
 import CustomKeyPage from '../page/CustomKeyPage';
 import AboutPage from '../page/about/AboutPage';
 import AboutMePage from '../page/about/AboutMePage';
+import CodePushPage from '../page/CodePushPage';
 import {connect} from 'react-redux';
 import {createReactNavigationReduxMiddleware, reduxifyNavigator} from 'react-navigation-redux-helpers';
 
@@ -66,6 +67,12 @@ const MainNavigator = createStackNavigator({
     },
     SearchPage: {
         screen: SearchPage,
+        navigationOptions: {
+            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+        }
+    },
+    CodePushPage: {
+        screen: CodePushPage,
         navigationOptions: {
             header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         }

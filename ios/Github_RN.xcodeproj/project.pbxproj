@@ -61,6 +61,8 @@
 		F43FC33821A96B2100BAC768 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC33521A96B2100BAC768 /* RNUMConfigure.m */; };
 		F43FC33921A96B2100BAC768 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC33621A96B2100BAC768 /* UMAnalyticsModule.m */; };
 		F43FC37121A9803600BAC768 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FC37021A9803600BAC768 /* UMShareModule.m */; };
+		F4BFBCE721AA9A150093B013 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F4BFBCE521AA9A150093B013 /* assets */; };
+		F4BFBCE821AA9A150093B013 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = F4BFBCE621AA9A150093B013 /* main.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,6 +425,8 @@
 		F43FC33A21A96B6E00BAC768 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F43FC34821A9803600BAC768 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMShareModule.h; sourceTree = "<group>"; };
 		F43FC37021A9803600BAC768 /* UMShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMShareModule.m; sourceTree = "<group>"; };
+		F4BFBCE521AA9A150093B013 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../bundles/assets; sourceTree = "<group>"; };
+		F4BFBCE621AA9A150093B013 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = ../bundles/main.jsbundle; sourceTree = "<group>"; };
 		F9016D2526F59FD75E3600E4 /* libPods-Github_RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Github_RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944DCC8D8164415A79D0348 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -568,6 +572,8 @@
 		13B07FAE1A68108700A75B9A /* Github_RN */ = {
 			isa = PBXGroup;
 			children = (
+				F4BFBCE521AA9A150093B013 /* assets */,
+				F4BFBCE621AA9A150093B013 /* main.jsbundle */,
 				F43FC34821A9803600BAC768 /* UMShareModule.h */,
 				F43FC37021A9803600BAC768 /* UMShareModule.m */,
 				F43FC33721A96B2100BAC768 /* RNUMConfigure.h */,
@@ -1251,9 +1257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BFBCE821AA9A150093B013 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				DB83613E7ADD48F3BE879DA2 /* AntDesign.ttf in Resources */,
+				F4BFBCE721AA9A150093B013 /* assets in Resources */,
 				E8145BF54B774C9F847F64F3 /* Entypo.ttf in Resources */,
 				678A4E9F7F11489CA19CC7AF /* EvilIcons.ttf in Resources */,
 				717E923D6E0E4BFFA04C0257 /* Feather.ttf in Resources */,
