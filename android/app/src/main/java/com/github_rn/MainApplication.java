@@ -9,6 +9,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.microsoft.codepush.react.CodePush;
+
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import org.devio.trackshare.TrackShare;
 import org.devio.trackshare.TrackShareReactPackage;
 
@@ -35,7 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new TrackShareReactPackage(),
           new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey),MainApplication.this,BuildConfig.DEBUG),
-          new VectorIconsPackage()
+          new VectorIconsPackage(),
+          new SplashScreenReactPackage()
       );
     }
 

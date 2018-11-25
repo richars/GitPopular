@@ -63,6 +63,7 @@
 		F4BFBD2F21AAA8440093B013 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2921AAA8430093B013 /* RNUMConfigure.m */; };
 		F4BFBD3021AAA8440093B013 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2B21AAA8430093B013 /* UMAnalyticsModule.m */; };
 		F4BFBD3121AAA8440093B013 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2C21AAA8430093B013 /* UMShareModule.m */; };
+		F4BFBD3821AAAD200093B013 /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BFBD3721AAAD090093B013 /* libSplashScreen.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,6 +368,13 @@
 			remoteGlobalIDString = F886647B1F4ADB500036D01B;
 			remoteInfo = "CodePush-tvOS";
 		};
+		F4BFBD3621AAAD090093B013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -427,6 +435,7 @@
 		F4BFBD2C21AAA8430093B013 /* UMShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMShareModule.m; path = Github_RN/UMShareModule.m; sourceTree = "<group>"; };
 		F4BFBD2D21AAA8430093B013 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNUMConfigure.h; path = Github_RN/RNUMConfigure.h; sourceTree = "<group>"; };
 		F4BFBD2E21AAA8430093B013 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMShareModule.h; path = Github_RN/UMShareModule.h; sourceTree = "<group>"; };
+		F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		F9016D2526F59FD75E3600E4 /* libPods-Github_RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Github_RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944DCC8D8164415A79D0348 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -444,6 +453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BFBD3821AAAD200093B013 /* libSplashScreen.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -646,6 +656,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -765,6 +776,14 @@
 			children = (
 				F4BFBCE221AA86D60093B013 /* libCodePush.a */,
 				F4BFBCE421AA86D60093B013 /* libCodePush.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4BFBD3321AAAD090093B013 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4BFBD3721AAAD090093B013 /* libSplashScreen.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -943,6 +962,10 @@
 				{
 					ProductGroup = F404B82C2196BCAD0004AC26 /* Products */;
 					ProjectRef = 307935B79AF246BFB8B9FD7C /* RNVectorIcons.xcodeproj */;
+				},
+				{
+					ProductGroup = F4BFBD3321AAAD090093B013 /* Products */;
+					ProjectRef = F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1243,6 +1266,13 @@
 			remoteRef = F4BFBCE321AA86D60093B013 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		F4BFBD3721AAAD090093B013 /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = F4BFBD3621AAAD090093B013 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1514,6 +1544,7 @@
 			baseConfigurationReference = 82E7EA5E565F6EEADFD0AA50 /* Pods-Github_RN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1523,6 +1554,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = Github_RN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1543,6 +1575,7 @@
 			baseConfigurationReference = 78B142B3FED822A66073AE62 /* Pods-Github_RN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1551,6 +1584,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = Github_RN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
