@@ -70,7 +70,7 @@ class PopularPage extends Component<Props> {
             barStyle: 'light-content',
         };
         let navigationBar = <NavigationBar
-            title={'最热123'}
+            title={'最热'}
             statusBar={statusBar}
             style={theme.styles.navBar}
             rightButton={this.renderRightButton()}

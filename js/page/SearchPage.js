@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
         height: 40,
         position: 'absolute',
         left: 10,
-        top: GlobalStyles.window_height - 45,
+        top: GlobalStyles.window_height - 45 - (DeviceInfo.isIPhoneX_deprecated ? 34 : 0),
         right: 10,
         borderRadius: 3
     },
