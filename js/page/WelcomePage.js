@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 
 import NavigationUtil from "../navigator/NavigationUtil";
 import SplashScreen from 'react-native-splash-screen'
+import actions from "../action";
+import connect from "react-redux/es/connect/connect";
 
 type Props = {};
 
-export default class WelcomePage extends Component<Props> {
+class WelcomePage extends Component<Props> {
     componentDidMount() {
+        this.props.onThemeInit();
         this.timer = setTimeout(() => {
             SplashScreen.hide();
             NavigationUtil.resetToHomPage({
@@ -23,3 +26,8 @@ export default class WelcomePage extends Component<Props> {
         return null;
     }
 }
+const mapDispatchToProps = dispatch => ({
+    onThemeInit: () => dispatch(actions.onThemeInit()),
+});
+
+export default connect(null, mapDispatchToProps)(WelcomePage);
