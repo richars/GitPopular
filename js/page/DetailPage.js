@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {WebView, StyleSheet, TouchableOpacity, View, DeviceInfo} from 'react-native';
+import {StyleSheet, TouchableOpacity, View, DeviceInfo} from 'react-native';
+import {WebView}from 'react-native-webview';
 import NavigationBar from '../common/NavigationBar'
 import ViewUtil from "../util/ViewUtil";
 import share from "../res/data/share";

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {DeviceInfo, StyleSheet, View, WebView} from 'react-native';
+import {DeviceInfo, StyleSheet} from 'react-native';
+import {WebView}from 'react-native-webview';
 import NavigationBar from '../common/NavigationBar'
 import ViewUtil from "../util/ViewUtil";
 import NavigationUtil from "../navigator/NavigationUtil";

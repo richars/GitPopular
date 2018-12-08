@@ -3,6 +3,7 @@ package com.github_rn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -35,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNCWebViewPackage(),
           new TrackShareReactPackage(),
           new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey),MainApplication.this,BuildConfig.DEBUG),
           new VectorIconsPackage(),

@@ -58,12 +58,11 @@
 		DB83613E7ADD48F3BE879DA2 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F944DCC8D8164415A79D0348 /* AntDesign.ttf */; };
 		E8145BF54B774C9F847F64F3 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95DE33A98C4046978E7FD893 /* Entypo.ttf */; };
 		EEBAC2789D4546AAA2A5D536 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C22F6A5FE5D480DA64DBAB2 /* libz.tbd */; };
-		F4BFBCE721AA9A150093B013 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F4BFBCE521AA9A150093B013 /* assets */; };
-		F4BFBCE821AA9A150093B013 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = F4BFBCE621AA9A150093B013 /* main.jsbundle */; };
 		F4BFBD2F21AAA8440093B013 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2921AAA8430093B013 /* RNUMConfigure.m */; };
 		F4BFBD3021AAA8440093B013 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2B21AAA8430093B013 /* UMAnalyticsModule.m */; };
 		F4BFBD3121AAA8440093B013 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2C21AAA8430093B013 /* UMShareModule.m */; };
 		F4BFBD3821AAAD200093B013 /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BFBD3721AAAD090093B013 /* libSplashScreen.a */; };
+		F4E649A721BC2F6200188F30 /* libRNCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E649A321BC2F4A00188F30 /* libRNCWebView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -375,10 +374,16 @@
 			remoteGlobalIDString = 3D7682761D8E76B80014119E;
 			remoteInfo = SplashScreen;
 		};
+		F4E649A221BC2F4A00188F30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4E6497721BC2F4900188F30 /* RNCWebView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNCWebView;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -427,8 +432,6 @@
 		D3645C60C78A4EE7AA437650 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		E3F7B832B52A4AFA83FBA1CA /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		F43FC33A21A96B6E00BAC768 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		F4BFBCE521AA9A150093B013 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../bundles/assets; sourceTree = "<group>"; };
-		F4BFBCE621AA9A150093B013 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = ../bundles/main.jsbundle; sourceTree = "<group>"; };
 		F4BFBD2921AAA8430093B013 /* RNUMConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNUMConfigure.m; path = Github_RN/RNUMConfigure.m; sourceTree = "<group>"; };
 		F4BFBD2A21AAA8430093B013 /* UMAnalyticsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMAnalyticsModule.h; path = Github_RN/UMAnalyticsModule.h; sourceTree = "<group>"; };
 		F4BFBD2B21AAA8430093B013 /* UMAnalyticsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMAnalyticsModule.m; path = Github_RN/UMAnalyticsModule.m; sourceTree = "<group>"; };
@@ -436,6 +439,7 @@
 		F4BFBD2D21AAA8430093B013 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNUMConfigure.h; path = Github_RN/RNUMConfigure.h; sourceTree = "<group>"; };
 		F4BFBD2E21AAA8430093B013 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMShareModule.h; path = Github_RN/UMShareModule.h; sourceTree = "<group>"; };
 		F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
+		F4E6497721BC2F4900188F30 /* RNCWebView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCWebView.xcodeproj; path = "../node_modules/react-native-webview/ios/RNCWebView.xcodeproj"; sourceTree = "<group>"; };
 		F9016D2526F59FD75E3600E4 /* libPods-Github_RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Github_RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944DCC8D8164415A79D0348 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -453,6 +457,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E649A721BC2F6200188F30 /* libRNCWebView.a in Frameworks */,
 				F4BFBD3821AAAD200093B013 /* libSplashScreen.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -582,9 +587,6 @@
 		13B07FAE1A68108700A75B9A /* Github_RN */ = {
 			isa = PBXGroup;
 			children = (
-				F4BFBCE521AA9A150093B013 /* assets */,
-				F4BFBCE621AA9A150093B013 /* main.jsbundle */,
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -656,6 +658,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F4E6497721BC2F4900188F30 /* RNCWebView.xcodeproj */,
 				F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -784,6 +787,14 @@
 			isa = PBXGroup;
 			children = (
 				F4BFBD3721AAAD090093B013 /* libSplashScreen.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4E6497821BC2F4900188F30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4E649A321BC2F4A00188F30 /* libRNCWebView.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -958,6 +969,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = F4E6497821BC2F4900188F30 /* Products */;
+					ProjectRef = F4E6497721BC2F4900188F30 /* RNCWebView.xcodeproj */;
 				},
 				{
 					ProductGroup = F404B82C2196BCAD0004AC26 /* Products */;
@@ -1273,6 +1288,13 @@
 			remoteRef = F4BFBD3621AAAD090093B013 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		F4E649A321BC2F4A00188F30 /* libRNCWebView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCWebView.a;
+			remoteRef = F4E649A221BC2F4A00188F30 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1287,11 +1309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BFBCE821AA9A150093B013 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				DB83613E7ADD48F3BE879DA2 /* AntDesign.ttf in Resources */,
-				F4BFBCE721AA9A150093B013 /* assets in Resources */,
 				E8145BF54B774C9F847F64F3 /* Entypo.ttf in Resources */,
 				678A4E9F7F11489CA19CC7AF /* EvilIcons.ttf in Resources */,
 				717E923D6E0E4BFFA04C0257 /* Feather.ttf in Resources */,
