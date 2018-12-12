@@ -6,7 +6,6 @@
 - 更多demo可查看[demo](https://github.com/crazycodeboy/RNStudyNotes/tree/master/Demo);
 - 课程源码，可通过git查看课程各章节的源码；
 
->可配合基础课程[ReactNative基础与入门](http://www.imooc.com/learn/808)一起学习；
 
 ## 如何运行？
 
