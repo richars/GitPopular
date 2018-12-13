@@ -5,6 +5,8 @@ import Page3 from '../pages/Page3'
 import {Platform,} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {BottomTabBar, createBottomTabNavigator} from 'react-navigation-tabs';
+import {createAppContainer} from "react-navigation";
+import Page4 from "../pages/Page4";
 
 const TABS = {//在这里配置页面的路由
     Page1: {
@@ -13,7 +15,7 @@ const TABS = {//在这里配置页面的路由
             tabBarLabel: 'Page10',
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
-                    name={focused ? 'ios-home' : 'ios-home-outline'}
+                    name={focused ? 'ios-home' : 'ios-basketball'}
                     size={26}
                     style={{color: tintColor}}
                 />
@@ -21,12 +23,12 @@ const TABS = {//在这里配置页面的路由
         }
     },
     Page2: {
-        screen: Page2,
+        screen: Page3,
         navigationOptions: {
-            tabBarLabel: 'Page2',
+            tabBarLabel: 'Page3',
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
-                    name={focused ? 'ios-people' : 'ios-people-outline'}
+                    name={focused ? 'ios-people' : 'ios-apps'}
                     size={26}
                     style={{color: tintColor}}
                 />
@@ -34,12 +36,12 @@ const TABS = {//在这里配置页面的路由
         }
     },
     Page3: {
-        screen: Page3,
+        screen: Page4,
         navigationOptions: {
-            tabBarLabel: 'Page3',
+            tabBarLabel: 'Page4',
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
-                    name={focused ? 'ios-chatboxes' : 'ios-chatboxes-outline'}
+                    name={focused ? 'ios-chatboxes' : 'ios-chatbubbles'}
                     size={26}
                     style={{color: tintColor}}
                 />
@@ -77,12 +79,12 @@ export default class DynamicTabNavigator extends React.Component {
             tabs = {Page1, Page2};
             Page1.navigationOptions.tabBarLabel = 'P1';//动态修改Tab的属性
         }
-        return createBottomTabNavigator(tabs, {//应用修改后的tab
+        return createAppContainer(createBottomTabNavigator(tabs, {//应用修改后的tab
             tabBarComponent: TabBarComponent,
             tabBarOptions: {
                 activeTintColor: Platform.OS === 'ios' ? '#e91e63' : '#fff',
             }
-        });
+        }));
     }
 
     render() {

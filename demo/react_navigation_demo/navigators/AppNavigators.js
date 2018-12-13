@@ -10,6 +10,7 @@ import HomePage from '../pages/HomePage'
 import {Button, Platform, ScrollView} from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import DynamicTabNavigator from "./DynamicTabNavigator";
 
 export const DrawerNav = createDrawerNavigator({
         Page4: {
@@ -194,7 +195,7 @@ export const AppStackNavigator = createStackNavigator({
         }
     },
     TabNav: {
-        screen: BottomTabNavigator,
+        screen: DynamicTabNavigator,
         navigationOptions: {//在这里定义每个页面的导航属性，静态配置
             title: "This is TabNavigator.",
             header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar

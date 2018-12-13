@@ -14,7 +14,7 @@ export default class Page1 extends React.Component {
 
     render() {
         const {navigation} = this.props;
-        return <View style={{flex: 1, backgroundColor: "gray",}}>
+        return <View style={{flex: 1, backgroundColor: "gray",marginTop: 30}}>
             <Text style={styles.text}>欢迎来到Page1</Text>
             <Button
                 title="Go Back"

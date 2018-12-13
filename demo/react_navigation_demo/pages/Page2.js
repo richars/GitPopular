@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {MaterialTopTabNavigator} from '../navigators/AppNavigators'
+import {createAppContainer} from "react-navigation";
 
 export default class Page2 extends React.Component {
     //在这里定义每个页面的导航属性
@@ -8,7 +9,8 @@ export default class Page2 extends React.Component {
     //     title: 'Page2',
     // };
     render() {
-        return <View style={styles.container}><MaterialTopTabNavigator/></View>
+        const MaterialTopTabNavigatorContainer = createAppContainer(MaterialTopTabNavigator);
+        return <View style={styles.container}><MaterialTopTabNavigatorContainer/></View>
     }
 }
 const styles = StyleSheet.create({

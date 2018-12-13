@@ -19,6 +19,10 @@ export default class HomePage extends React.Component {
 
     doCheck(index) {
         this.state.pageCheckedArray[index] = !this.state.pageCheckedArray[index];
+        this.setState({
+            pageCheckedArray:this.state.pageCheckedArray
+        })
+
     }
 
     render() {
@@ -80,6 +84,7 @@ export default class HomePage extends React.Component {
                 title="Go To TabNavigator"
                 onPress={() => {
                     let tabs = [];
+                    debugger
                     for (let i in this.state.pageCheckedArray) {
                         this.state.pageCheckedArray[i] && tabs.push('Page' + (parseInt(i) + 1));
                     }
@@ -92,8 +97,7 @@ export default class HomePage extends React.Component {
                     navigation.navigate('DrawerNav', {name: 'Devio'});
                 }}
             />
-        </View
-        >
+        </View>
     }
 }
 const styles = StyleSheet.create({
