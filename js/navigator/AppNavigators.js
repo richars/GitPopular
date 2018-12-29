@@ -1,4 +1,4 @@
-import {createStackNavigator, createSwitchNavigator} from "react-navigation";
+import {createStackNavigator, createSwitchNavigator, createAppContainer} from "react-navigation";
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import WebViewPage from '../page/WebViewPage';
@@ -77,15 +77,19 @@ const MainNavigator = createStackNavigator({
             header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         }
     },
+}, {
+    defaultNavigationOptions: {
+        header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+    }
 });
-export const RootNavigator = createSwitchNavigator({
+export const RootNavigator = createAppContainer(createSwitchNavigator({
     Init: InitNavigator,
     Main: MainNavigator,
 }, {
     navigationOptions: {
         header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
     }
-});
+}));
 /**
  * 1.初始化react-navigation与redux的中间件，
  * 该方法的一个很大的作用就是为reduxifyNavigator的key设置actionSubscribers(行为订阅者)

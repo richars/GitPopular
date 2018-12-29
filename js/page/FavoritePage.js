@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {DeviceInfo, FlatList, RefreshControl, StyleSheet, View} from 'react-native';
+import {FlatList, RefreshControl, StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import actions from '../action/index'
-import {createMaterialTopTabNavigator,} from "react-navigation";
+import {createMaterialTopTabNavigator, createAppContainer} from "react-navigation";
 import NavigationUtil from '../navigator/NavigationUtil'
 import PopularItem from '../common/PopularItem'
 import Toast from 'react-native-easy-toast'
@@ -15,12 +15,12 @@ import EventBus from "react-native-event-bus";
 import EventTypes from "../util/EventTypes";
 
 type Props = {};
+
 class FavoritePage extends Component<Props> {
     constructor(props) {
         super(props);
         console.log(NavigationUtil.navigation)
     }
-
 
 
     render() {
@@ -34,19 +34,19 @@ class FavoritePage extends Component<Props> {
             statusBar={statusBar}
             style={theme.styles.navBar}
         />;
-        const TabNavigator = createMaterialTopTabNavigator({
-            'Popular': {
-                screen: props => <FavoriteTabPage {...props} flag={FLAG_STORAGE.flag_popular} theme={theme}/>,//初始化Component时携带默认参数 @https://github.com/react-navigation/react-navigation/issues/2392
-                navigationOptions: {
-                    title: '最热',
+        const TabNavigator = createAppContainer(createMaterialTopTabNavigator({
+                'Popular': {
+                    screen: props => <FavoriteTabPage {...props} flag={FLAG_STORAGE.flag_popular} theme={theme}/>,//初始化Component时携带默认参数 @https://github.com/react-navigation/react-navigation/issues/2392
+                    navigationOptions: {
+                        title: '最热',
+                    },
                 },
-            },
-            'Trending': {
-                screen: props => <FavoriteTabPage {...props} flag={FLAG_STORAGE.flag_trending} theme={theme}/>,//初始化Component时携带默认参数 @https://github.com/react-navigation/react-navigation/issues/2392
-                navigationOptions: {
-                    title: '趋势',
+                'Trending': {
+                    screen: props => <FavoriteTabPage {...props} flag={FLAG_STORAGE.flag_trending} theme={theme}/>,//初始化Component时携带默认参数 @https://github.com/react-navigation/react-navigation/issues/2392
+                    navigationOptions: {
+                        title: '趋势',
+                    },
                 },
-            },
             }, {
                 tabBarOptions: {
                     tabStyle: styles.tabStyle,
@@ -59,13 +59,14 @@ class FavoritePage extends Component<Props> {
                     labelStyle: styles.labelStyle,//文字的样式
                 }
             }
-        );
+        ));
         return <View style={styles.container}>
             {navigationBar}
             <TabNavigator/>
         </View>
     }
 }
+
 const mapFavoriteStateToProps = state => ({
     theme: state.theme.theme,
 });
@@ -115,6 +116,7 @@ class FavoriteTab extends Component<Props> {
         }
         return store;
     }
+
     onFavorite(item, isFavorite) {
         FavoriteUtil.onFavorite(this.favoriteDao, item, isFavorite, this.props.flag);
         if (this.storeName === FLAG_STORAGE.flag_popular) {
@@ -135,11 +137,11 @@ class FavoriteTab extends Component<Props> {
                 NavigationUtil.goPage({
                     theme,
                     projectModel: item,
-                    flag:this.storeName,
+                    flag: this.storeName,
                     callback,
                 }, 'DetailPage')
             }}
-            onFavorite={(item,isFavorite)=>this.onFavorite(item,isFavorite)}
+            onFavorite={(item, isFavorite) => this.onFavorite(item, isFavorite)}
         />
     }
 

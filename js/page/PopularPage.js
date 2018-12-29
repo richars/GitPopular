@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import {StyleSheet, ActivityIndicator, Text, View, FlatList, RefreshControl,TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import actions from '../action/index'
-import {createMaterialTopTabNavigator,} from "react-navigation";
+import {createMaterialTopTabNavigator,createAppContainer} from "react-navigation";
 import NavigationUtil from '../navigator/NavigationUtil'
 import PopularItem from '../common/PopularItem'
 import Toast from 'react-native-easy-toast'
 import NavigationBar from '../common/NavigationBar';
-import {DeviceInfo} from 'react-native';
 import FavoriteDao from "../expand/dao/FavoriteDao";
 import {FLAG_STORAGE} from "../expand/dao/DataStore";
 import FavoriteUtil from "../util/FavoriteUtil";
@@ -75,7 +74,7 @@ class PopularPage extends Component<Props> {
             style={theme.styles.navBar}
             rightButton={this.renderRightButton()}
         />;
-        const TabNavigator = keys.length ? createMaterialTopTabNavigator(
+        const TabNavigator = keys.length ? createAppContainer(createMaterialTopTabNavigator(
             this._genTabs(), {
                 tabBarOptions: {
                     tabStyle: styles.tabStyle,
@@ -90,7 +89,7 @@ class PopularPage extends Component<Props> {
                 },
                 lazy: true
             }
-        ) : null;
+        )) : null;
         return <View style={styles.container}>
             {navigationBar}
             {TabNavigator && <TabNavigator/>}

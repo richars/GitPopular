@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, StyleSheet, Text, View, TextInput} from 'react-native';
 import actions from "../action";
-import connect from "react-redux/es/connect/connect";
+import {connect} from "react-redux";
 
 
 type Props = {};

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import NavigationUtil from "../navigator/NavigationUtil";
 import SplashScreen from 'react-native-splash-screen'
 import actions from "../action";
-import connect from "react-redux/es/connect/connect";
+import {connect} from "react-redux";
 
 type Props = {};
 

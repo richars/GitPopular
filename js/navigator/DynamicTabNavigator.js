@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {createBottomTabNavigator,} from "react-navigation";
+import {createBottomTabNavigator, createAppContainer} from "react-navigation";
 import {connect} from 'react-redux';
 import PopularPage from '../page/PopularPage';
 import TrendingPage from '../page/TrendingPage';
@@ -8,7 +8,6 @@ import MyPage from '../page/MyPage';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
-import NavigationUtil from "../navigator/NavigationUtil";
 import EventTypes from '../util/EventTypes';
 import {BottomTabBar} from 'react-navigation-tabs';
 import EventBus from 'react-native-event-bus'
@@ -86,12 +85,12 @@ class DynamicTabNavigator extends Component<Props> {
         const {PopularPage, TrendingPage, FavoritePage, MyPage} = TABS;
         const tabs = {PopularPage, TrendingPage, FavoritePage, MyPage};//根据需要定制显示的tab
         PopularPage.navigationOptions.tabBarLabel = '最热';//动态配置Tab属性
-        return this.Tabs = createBottomTabNavigator(tabs, {
+        return this.Tabs = createAppContainer(createBottomTabNavigator(tabs, {
                 tabBarComponent: props => {
                     return <TabBarComponent theme={this.props.theme} {...props}/>
                 }
             }
-        )
+        ))
     }
 
     render() {

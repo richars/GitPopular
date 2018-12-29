@@ -7,12 +7,11 @@ import {
     View,
     FlatList,
     RefreshControl,
-    DeviceInfo,
     DeviceEventEmitter
 } from 'react-native';
 import {connect} from 'react-redux';
 import actions from '../action/index'
-import {createMaterialTopTabNavigator,} from "react-navigation";
+import {createMaterialTopTabNavigator, createAppContainer} from "react-navigation";
 import NavigationUtil from '../navigator/NavigationUtil'
 import TrendingItem from '../common/TrendingItem'
 import Toast from 'react-native-easy-toast'
@@ -104,7 +103,7 @@ class TrendingPage extends Component<Props> {
         //注意：主题发生变化需要重新渲染top tab
         if (theme !== this.theme || !this.tabNav || !ArrayUtil.isEqual(this.preKeys, this.props.keys)) {//优化效率：根据需要选择是否重新创建建TabNavigator，通常tab改变后才重新创建
             this.theme = theme;
-            this.tabNav = createMaterialTopTabNavigator(
+            this.tabNav = createAppContainer(createMaterialTopTabNavigator(
                 this._genTabs(), {
                     tabBarOptions: {
                         tabStyle: styles.tabStyle,
@@ -119,7 +118,7 @@ class TrendingPage extends Component<Props> {
                     },
                     lazy: true
                 }
-            );
+            ));
         }
         return this.tabNav;
     }

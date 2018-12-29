@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavigationUtil from "../navigator/NavigationUtil";
 import DynamicTabNavigator from "../navigator/DynamicTabNavigator";
 import {NavigationActions} from "react-navigation";
-import connect from "react-redux/es/connect/connect";
+import {connect} from "react-redux";
 import BackPressComponent from "../common/BackPressComponent";
 import CustomTheme from '../page/CustomTheme';
 import actions from "../action";
