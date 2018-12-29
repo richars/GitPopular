@@ -1,4 +1,4 @@
-实战课[最新版react native+redux打造高质量上线app]()
+实战课[最新版react native+redux打造高质量上线app](https://coding.imooc.com/class/304.html)
 
 ## 概述
 - 课程文档查看[doc](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/doc);
