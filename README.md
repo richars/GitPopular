@@ -14,3 +14,39 @@
 3. 然后运行 react-native run-ios 或 react-native run-android；
 4. Ok,有问题可以提issues出来;
 
+## 更新日志
+
+- [24212eb835](https://git.imooc.com/coding-304/GitHub_Advanced/commit/24212eb835b6db639b82017b8090c15a14dea48f) - Keep react navigation new and react-navigation-redux-helpe : 此次更新适配了react-navigation-redux-helpers3.0;
+
+> react-navigation-redux-helpers3.0的两个变更:
+
+**1.reduxifyNavigator被改名为createReduxContainer，所以：**
+
+```
+import {createReactNavigationReduxMiddleware, reduxifyNavigator} from 'react-navigation-redux-helpers';
+//改为
+import {createReactNavigationReduxMiddleware, createReduxContainer} from 'react-navigation-redux-helpers';
+...
+const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
+//改为
+const AppWithNavigationState = createReduxContainer(RootNavigator, 'root');
+```
+
+**2.createReactNavigationReduxMiddleware的参数顺序发生了变化：**
+
+```
+export const middleware = createReactNavigationReduxMiddleware(
+    'root',
+    state => state.nav
+);
+//改为
+export const middleware = createReactNavigationReduxMiddleware(
+    state => state.nav,
+    'root'
+);
+```
+
+可参考：[https://git.imooc.com/coding-304/GitHub_Advanced/commit/24212eb835b6db639b82017b8090c15a14dea48f](https://git.imooc.com/coding-304/GitHub_Advanced/commit/24212eb835b6db639b82017b8090c15a14dea48f)
+
+
+
