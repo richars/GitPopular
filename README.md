@@ -14,6 +14,10 @@
 3. 然后运行 react-native run-ios 或 react-native run-android；
 4. Ok,有问题可以提issues出来;
 
+## 课程辅导答疑
+
+[http://coding.imooc.com/learn/qa/304.html](http://coding.imooc.com/learn/qa/304.html)
+
 ## 更新日志
 
 - [24212eb835](https://git.imooc.com/coding-304/GitHub_Advanced/commit/24212eb835b6db639b82017b8090c15a14dea48f) - Keep react navigation new and react-navigation-redux-helpe : 此次更新适配了react-navigation-redux-helpers3.0;
