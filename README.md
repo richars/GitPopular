@@ -20,7 +20,7 @@
 
 ## 更新日志
 
-- [888]()
+- [c8163255de](https://git.imooc.com/coding-304/GitHub_Advanced/commit/c8163255decb9629e3c53a4819ae711a5e241f9d)
 	- `"react-navigation": "^3.3.2"` -> `"react-navigation": "^3.3.2"`
 	- `"react-navigation-tabs": "^1.0.2"` -> `react-navigation-tabs": "^2.0.0-alpha.0"`
 	- 添加`"react-native-reanimated": "^1.0.0-alpha.12"`
