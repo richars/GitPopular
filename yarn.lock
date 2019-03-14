@@ -728,14 +728,14 @@
     react-is "^16.5.2"
     react-lifecycles-compat "^3.0.4"
 
-"@react-navigation/native@3.1.4":
-  version "3.1.4"
-  resolved "http://registry.npm.taobao.org/@react-navigation/native/download/@react-navigation/native-3.1.4.tgz#ff305d01e156077d06ff513bbcbb6ad54d4ca80d"
-  integrity sha1-/zBdAeFWB30G/1E7vLtq1U1MqA0=
+"@react-navigation/native@3.1.5":
+  version "3.1.5"
+  resolved "http://registry.npm.taobao.org/@react-navigation/native/download/@react-navigation/native-3.1.5.tgz#fe584f393225b6a3f6cc2ce0dc68c1fe110e9d30"
+  integrity sha1-/lhPOTIltqP2zCzg3GjB/hEOnTA=
   dependencies:
     hoist-non-react-statics "^3.0.1"
     react-native-gesture-handler "~1.0.14"
-    react-native-safe-area-view "^0.12.0"
+    react-native-safe-area-view "^0.13.0"
     react-native-screens "^1.0.0 || ^1.0.0-alpha"
 
 GitHubTrending@^3.0.1:
@@ -1478,11 +1478,6 @@ commander@^2.9.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
-
-commander@~2.13.0:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
-  integrity sha512-MVuS359B+YzaWqjCL/c+22gfryv+mCBPHAv3zyVI2GN8EY6IRP8VwtasXn8jyyhvvq84R4ImN1OKRtcbIasjYA==
 
 commander@~2.17.1:
   version "2.17.1"
@@ -5128,10 +5123,15 @@ react-native-parallax-scroll-view@^0.21.3:
   dependencies:
     prop-types "^15.6.0"
 
-react-native-safe-area-view@^0.12.0:
-  version "0.12.0"
-  resolved "http://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.12.0.tgz#5c312f087300ecf82e8541c3eac25d560e147f22"
-  integrity sha1-XDEvCHMA7PguhUHD6sJdVg4UfyI=
+react-native-reanimated@^1.0.0-alpha.12:
+  version "1.0.0-alpha.12"
+  resolved "http://registry.npm.taobao.org/react-native-reanimated/download/react-native-reanimated-1.0.0-alpha.12.tgz#535c84a9e87c919417aee0fa68f360b3bb9556b0"
+  integrity sha1-U1yEqeh8kZQXruD6aPNgs7uVVrA=
+
+react-native-safe-area-view@^0.13.0:
+  version "0.13.1"
+  resolved "http://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.13.1.tgz#834bbb6d22f76a7ff07de56725ee5667ba1386b0"
+  integrity sha1-g0u7bSL3an/wfeVnJe5WZ7oThrA=
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
@@ -5156,6 +5156,11 @@ react-native-tab-view@^1.0.0, react-native-tab-view@^1.2.0:
   integrity sha512-QNt6VkEW8SP1UJ7yjD5P4bOTWwHQfoIMD5CqnA06pcubdNwHR1NmjiNZsVnIvp5wAEVbW6yTHjLXOh1fzab4xg==
   dependencies:
     prop-types "^15.6.1"
+
+react-native-tab-view@^2.0.1:
+  version "2.0.3"
+  resolved "http://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-2.0.3.tgz#0160e2d94e69c722fcefa8649ffe13fec9177a0d"
+  integrity sha1-AWDi2U5pxyL876hkn/4T/skXeg0=
 
 react-native-vector-icons@^6.0.2:
   version "6.1.0"
@@ -5233,10 +5238,10 @@ react-native@0.58.4:
     xmldoc "^0.4.0"
     yargs "^9.0.0"
 
-react-navigation-drawer@1.1.0:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/react-navigation-drawer/download/react-navigation-drawer-1.1.0.tgz#e39dbf493c77890c90f8ed4d83d06c87af65abf0"
-  integrity sha1-452/STx3iQyQ+O1Ng9Bsh69lq/A=
+react-navigation-drawer@1.2.0:
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/react-navigation-drawer/download/react-navigation-drawer-1.2.0.tgz#475dccb00bc0e5dd56aa65a46f71ed66545f7a6b"
+  integrity sha1-R13MsAvA5d1WqmWkb3HtZlRfems=
   dependencies:
     react-native-tab-view "^1.2.0"
 
@@ -5247,12 +5252,12 @@ react-navigation-redux-helpers@^3.0.0:
   dependencies:
     invariant "^2.2.2"
 
-react-navigation-stack@1.0.9:
-  version "1.0.9"
-  resolved "http://registry.npm.taobao.org/react-navigation-stack/download/react-navigation-stack-1.0.9.tgz#cbdcc224f709202ea62b3f2a2d84561cd199493a"
-  integrity sha1-y9zCJPcJIC6mKz8qLYRWHNGZSTo=
+react-navigation-stack@1.0.10:
+  version "1.0.10"
+  resolved "http://registry.npm.taobao.org/react-navigation-stack/download/react-navigation-stack-1.0.10.tgz#cf1f4f222bddbfae134cfb28362bafd42a64c485"
+  integrity sha1-zx9PIivdv64TTPsoNiuv1CpkxIU=
 
-react-navigation-tabs@1.0.2, react-navigation-tabs@^1.0.2:
+react-navigation-tabs@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-navigation-tabs/-/react-navigation-tabs-1.0.2.tgz#cc6c61db0c61054388ef6f726a8ffc183d6095b5"
   integrity sha512-ffWPVdo+L0GLbQlLAzH7ITYqh9V9NdqT/juj8QtESH5/2yUqfvqTxQoSowvFIrtiIHHFH6tLoQy1sZZciTxmeg==
@@ -5262,15 +5267,24 @@ react-navigation-tabs@1.0.2, react-navigation-tabs@^1.0.2:
     react-lifecycles-compat "^3.0.4"
     react-native-tab-view "^1.0.0"
 
-react-navigation@^3.2.1:
-  version "3.2.1"
-  resolved "http://registry.npm.taobao.org/react-navigation/download/react-navigation-3.2.1.tgz#83873d5fe25ec870455d9760b98df6e915fe2d65"
-  integrity sha1-g4c9X+JeyHBFXZdguY326RX+LWU=
+react-navigation-tabs@^2.0.0-alpha.0:
+  version "2.0.0-alpha.0"
+  resolved "http://registry.npm.taobao.org/react-navigation-tabs/download/react-navigation-tabs-2.0.0-alpha.0.tgz#4efbc1413c693be1493514744b538b3c82ee7136"
+  integrity sha1-TvvBQTxpO+FJNRR0S1OLPILucTY=
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    react-lifecycles-compat "^3.0.4"
+    react-native-tab-view "^2.0.1"
+
+react-navigation@^3.3.2:
+  version "3.3.2"
+  resolved "http://registry.npm.taobao.org/react-navigation/download/react-navigation-3.3.2.tgz#4f0fe3fa119adb4922d29da2ae395dd5b020a5f9"
+  integrity sha1-Tw/j+hGa20ki0p2irjld1bAgpfk=
   dependencies:
     "@react-navigation/core" "3.1.1"
-    "@react-navigation/native" "3.1.4"
-    react-navigation-drawer "1.1.0"
-    react-navigation-stack "1.0.9"
+    "@react-navigation/native" "3.1.5"
+    react-navigation-drawer "1.2.0"
+    react-navigation-stack "1.0.10"
     react-navigation-tabs "1.0.2"
 
 react-proxy@^1.1.7:
@@ -6330,9 +6344,6 @@ uglify-es@^3.1.9:
   version "3.3.9"
   resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.9.tgz#0c1c4f0700bed8dbc124cdb304d2592ca203e677"
   integrity sha512-r+MU0rfv4L/0eeW3xZrd16t4NZfK8Ld4SWVglYBb7ez5uXFWHuVRs6xCTrf1yirs9a4j4Y27nn7SRfO6v67XsQ==
-  dependencies:
-    commander "~2.13.0"
-    source-map "~0.6.1"
 
 uglify-js@^3.1.4:
   version "3.4.9"

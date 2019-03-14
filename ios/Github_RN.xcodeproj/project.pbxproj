@@ -65,6 +65,7 @@
 		F4BFBD3021AAA8440093B013 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2B21AAA8430093B013 /* UMAnalyticsModule.m */; };
 		F4BFBD3121AAA8440093B013 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BFBD2C21AAA8430093B013 /* UMShareModule.m */; };
 		F4BFBD3821AAAD200093B013 /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BFBD3721AAAD090093B013 /* libSplashScreen.a */; };
+		F4CA127E223AAC1100E58268 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA127D223AAC0100E58268 /* libRNReanimated.a */; };
 		F4E649A721BC2F6200188F30 /* libRNCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E649A321BC2F4A00188F30 /* libRNCWebView.a */; };
 /* End PBXBuildFile section */
 
@@ -384,6 +385,13 @@
 			remoteGlobalIDString = 3D7682761D8E76B80014119E;
 			remoteInfo = SplashScreen;
 		};
+		F4CA127C223AAC0100E58268 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4CA1278223AAC0100E58268 /* RNReanimated.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNReanimated;
+		};
 		F4E649A221BC2F4A00188F30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4E6497721BC2F4900188F30 /* RNCWebView.xcodeproj */;
@@ -452,6 +460,7 @@
 		F4BFBD2D21AAA8430093B013 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNUMConfigure.h; path = Github_RN/RNUMConfigure.h; sourceTree = "<group>"; };
 		F4BFBD2E21AAA8430093B013 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMShareModule.h; path = Github_RN/UMShareModule.h; sourceTree = "<group>"; };
 		F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
+		F4CA1278223AAC0100E58268 /* RNReanimated.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNReanimated.xcodeproj; path = "../node_modules/react-native-reanimated/ios/RNReanimated.xcodeproj"; sourceTree = "<group>"; };
 		F4E6497721BC2F4900188F30 /* RNCWebView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCWebView.xcodeproj; path = "../node_modules/react-native-webview/ios/RNCWebView.xcodeproj"; sourceTree = "<group>"; };
 		F9016D2526F59FD75E3600E4 /* libPods-Github_RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Github_RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944DCC8D8164415A79D0348 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
@@ -470,6 +479,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CA127E223AAC1100E58268 /* libRNReanimated.a in Frameworks */,
 				F42FF04621D7A06F0019B90A /* libRNGestureHandler.a in Frameworks */,
 				F4E649A721BC2F6200188F30 /* libRNCWebView.a in Frameworks */,
 				F4BFBD3821AAAD200093B013 /* libSplashScreen.a in Frameworks */,
@@ -676,6 +686,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F4CA1278223AAC0100E58268 /* RNReanimated.xcodeproj */,
 				F42FF00D21D7A0600019B90A /* RNGestureHandler.xcodeproj */,
 				F4E6497721BC2F4900188F30 /* RNCWebView.xcodeproj */,
 				F4BFBD3221AAAD090093B013 /* SplashScreen.xcodeproj */,
@@ -814,6 +825,14 @@
 			isa = PBXGroup;
 			children = (
 				F4BFBD3721AAAD090093B013 /* libSplashScreen.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4CA1279223AAC0100E58268 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4CA127D223AAC0100E58268 /* libRNReanimated.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1003,6 +1022,10 @@
 				{
 					ProductGroup = F42FF00E21D7A0600019B90A /* Products */;
 					ProjectRef = F42FF00D21D7A0600019B90A /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = F4CA1279223AAC0100E58268 /* Products */;
+					ProjectRef = F4CA1278223AAC0100E58268 /* RNReanimated.xcodeproj */;
 				},
 				{
 					ProductGroup = F404B82C2196BCAD0004AC26 /* Products */;
@@ -1323,6 +1346,13 @@
 			fileType = archive.ar;
 			path = libSplashScreen.a;
 			remoteRef = F4BFBD3621AAAD090093B013 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F4CA127D223AAC0100E58268 /* libRNReanimated.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNReanimated.a;
+			remoteRef = F4CA127C223AAC0100E58268 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		F4E649A321BC2F4A00188F30 /* libRNCWebView.a */ = {
