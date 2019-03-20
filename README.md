@@ -20,11 +20,24 @@
 
 ## 更新日志
 
-### 2019-03-19：[1849994783](https://git.imooc.com/coding-304/GitHub_Advanced/commit/1849994783b160c899c6da4f4db0e43a1811c989)
+#### 2019-03-21：适配react-native:0.59.1 具体更新如下：
+
+- `"react-native": "0.58.4"` -> `"react-native": "0.59.1"`
+- `"react": "16.6.3"` -> `"react": "16.8.3"`
+- `"react-native-splash-screen": "^3.1.1"` -> `"react-native-splash-screen": "^3.2.0"`
+- `"react-native-webview": "^2.14.0"` -> `"react-native-webview": "^5.3.1"`
+- 其他依赖升级
+- Android版本升级：
+	-  `targetSdkVersion = 27` -> `targetSdkVersion = 28`
+	-  其他构件工具版本升级
+
+此次更新，主要升级了一些SDK和构件工具的版本，另外，**此次从RN 0.5.84 升级到RN 0.59.1 除了版本号更新外其它需要适配的很少，为避免踩坑同学们可以参考老师的提交记录进行升级**
+
+#### 2019-03-19：新增列表实例代码 - [1849994783](https://git.imooc.com/coding-304/GitHub_Advanced/commit/1849994783b160c899c6da4f4db0e43a1811c989)
 
 - 新增[列表实例代码](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/demo/FasterListDemo)；
 
-### 2019-03-14：[c8163255de](https://git.imooc.com/coding-304/GitHub_Advanced/commit/c8163255decb9629e3c53a4819ae711a5e241f9d)
+#### 2019-03-14：react-navigation-tabs升级到2.x : [c8163255de](https://git.imooc.com/coding-304/GitHub_Advanced/commit/c8163255decb9629e3c53a4819ae711a5e241f9d)
 	
 - `"react-navigation": "^3.3.2"` -> `"react-navigation": "^3.3.2"`
 - `"react-navigation-tabs": "^1.0.2"` -> `react-navigation-tabs": "^2.0.0-alpha.0"`
@@ -34,7 +47,7 @@
 
 **另外需要注意的是因为`react-native-reanimated`包含native部分的代码，所以我们除了运行yarn add命令之外，还需要通过`react-native link react-native-reanimated`将它的native部分的代码关联到项目中去。**
 
-### 2019-02-19：[24212eb835](https://git.imooc.com/coding-304/GitHub_Advanced/commit/24212eb835b6db639b82017b8090c15a14dea48f) - Keep react navigation new and react-navigation-redux-helpe : 此次更新适配了react-navigation-redux-helpers3.0;
+#### 2019-02-19：此次更新适配了react-navigation-redux-helpers3.0 : [24212eb835](https://git.imooc.com/coding-304/GitHub_Advanced/commit/24212eb835b6db639b82017b8090c15a14dea48f) 
 
 > react-navigation-redux-helpers3.0的两个变更:
 
