@@ -20,7 +20,7 @@
 
 ## 更新日志
 
-#### 2019-03-21：适配react-native:0.59.1 具体更新如下：
+#### 2019-03-21：适配react-native:0.59.1 具体更新如下 - [e8c1e746fa](https://git.imooc.com/coding-304/GitHub_Advanced/commit/e8c1e746fad47c2d0b7f73131744af3aca9bcb5b)：
 
 - `"react-native": "0.58.4"` -> `"react-native": "0.59.1"`
 - `"react": "16.6.3"` -> `"react": "16.8.3"`
@@ -33,7 +33,7 @@
 
 此次更新，主要升级了一些SDK和构件工具的版本，另外，**此次从RN 0.5.84 升级到RN 0.59.1 除了版本号更新外其它需要适配的很少，为避免踩坑同学们可以参考老师的提交记录进行升级**
 
-#### 2019-03-19：新增列表实例代码 - [1849994783](https://git.imooc.com/coding-304/GitHub_Advanced/commit/1849994783b160c899c6da4f4db0e43a1811c989)
+#### 2019-03-19：新增列表实例代码 : [1849994783](https://git.imooc.com/coding-304/GitHub_Advanced/commit/1849994783b160c899c6da4f4db0e43a1811c989)
 
 - 新增[列表实例代码](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/demo/FasterListDemo)；
 
