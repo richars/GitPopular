@@ -185,6 +185,7 @@ class PopularTab extends Component<Props> {
                     flag: FLAG_STORAGE.flag_popular,
                     callback,
                 }, 'DetailPage')
+                //  this.props.navigation.navigate('tab1');//跳转到createMaterialTopTabNavigator中的指定tab，主要这个navigation一定要是在跳转到createMaterialTopTabNavigator中的指页面获取的
             }}
             onFavorite={(item, isFavorite) => FavoriteUtil.onFavorite(favoriteDao, item, isFavorite, FLAG_STORAGE.flag_popular)}
         />
