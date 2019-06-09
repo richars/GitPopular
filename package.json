@@ -10,7 +10,7 @@
     "GitHubTrending": "^3.0.1",
     "prop-types": "^15.6.2",
     "react": "16.8.3",
-    "react-native": "0.59.1",
+    "react-native": "0.59.9",
     "react-native-check-box": "^2.1.6",
     "react-native-code-push": "^5.4.2",
     "react-native-easy-toast": "^1.1.0",
@@ -31,14 +31,15 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/runtime": "^7.4.0",
-    "babel-jest": "^24.5.0",
-    "jest": "^24.5.0",
-    "metro-react-native-babel-preset": "^0.53.1",
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
     "react-test-renderer": "16.8.3",
     "redux-devtools": "^3.4.1"
   },
+
   "jest": {
     "preset": "react-native"
   }

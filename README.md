@@ -20,6 +20,15 @@
 
 ## 更新日志
 
+#### 2019-06-09：适配react-native:0.59.9 具体更新如下： 
+
+- `"react-native": "0.59.1"` -> `"react-native": "0.59.9"`
+- `"@babel/core": "^7.4.0"` -> `"@babel/core": "^7.4.5"` 
+- `"@babel/runtime": "^7.4.0"` ->  `"@babel/runtime": "^7.4.5"` 
+- `"babel-jest": "^24.5.0"` -> `"babel-jest": "^24.8.0"`
+- `"jest": "^24.5.0"` -> `"jest": "^24.8.0"`
+- `"metro-react-native-babel-preset": "^0.53.1"` -> `"metro-react-native-babel-preset": "^0.54.1"`
+
 #### 2019-03-21：适配react-native:0.59.1 具体更新如下 - [e8c1e746fa](https://git.imooc.com/coding-304/GitHub_Advanced/commit/e8c1e746fad47c2d0b7f73131744af3aca9bcb5b)：
 
 - `"react-native": "0.58.4"` -> `"react-native": "0.59.1"`
