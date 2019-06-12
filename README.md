@@ -20,6 +20,10 @@
 
 ## 更新日志
 
+#### 2019-06-12：升级GitHubTrending 具体更新如下：
+
+- `"GitHubTrending": "^3.0.1"` -> `"GitHubTrending": "^3.0.2"`
+
 #### 2019-06-09：适配react-native:0.59.9 具体更新如下： 
 
 - `"react-native": "0.59.1"` -> `"react-native": "0.59.9"`
