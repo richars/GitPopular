@@ -1098,10 +1098,10 @@
   resolved "http://registry.npm.taobao.org/@types/yargs/download/@types/yargs-12.0.10.tgz#17a8ec65cd8e88f51b418ceb271af18d3137df67"
   integrity sha1-F6jsZc2OiPUbQYzrJxrxjTE332c=
 
-GitHubTrending@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npm.taobao.org/GitHubTrending/download/GitHubTrending-3.0.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2FGitHubTrending%2Fdownload%2FGitHubTrending-3.0.2.tgz#4f4e542d441ae51e25dc65734040421d5a9d8a5c"
-  integrity sha1-T05ULUQa5R4l3GVzQEBCHVqdilw=
+GitHubTrending@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/GitHubTrending/-/GitHubTrending-3.1.1.tgz#34e8709d8d6b7c97642e0d2039259be24ede97a0"
+  integrity sha512-Rqy+0uBaJ1aehmwMqXKgtWPDwr7oudmPcwZaYr7mzt33btUFJ0LGoa/ZpQqpF1MlCDWyOKS6LPjgH601i6R8yw==
 
 abab@^2.0.0:
   version "2.0.0"

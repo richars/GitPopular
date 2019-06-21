@@ -20,6 +20,12 @@
 
 ## 更新日志
 
+#### 2019-06-21：优化详情页webview兼容问题；升级GitHubTrending；升级react-navigation & react-navigation-tabs到最新版-解决Android下点击切换问题；
+
+- `"GitHubTrending": "^3.0.2"` -> `"GitHubTrending": "^3.1.1"`
+- `"react-navigation": "^3.3.2"` -> `"react-navigation": "^3.11.0"`
+- `"react-navigation-tabs": "^2.0.0-alpha.0"` -> `react-navigation-tabs": "^2.1.3"`
+
 #### 2019-06-12：升级GitHubTrending 具体更新如下：
 
 - `"GitHubTrending": "^3.0.1"` -> `"GitHubTrending": "^3.0.2"`
