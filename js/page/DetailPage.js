@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity, View, DeviceInfo} from 'react-native';
-import {WebView}from 'react-native-webview';
-import NavigationBar from '../common/NavigationBar'
+import {WebView} from 'react-native-webview';
+import NavigationBar, {NAVIGATION_BAR_HEIGHT} from '../common/NavigationBar'
 import ViewUtil from "../util/ViewUtil";
 import share from "../res/data/share";
 import ShareUtil from "../util/ShareUtil";
 import SafeAreaViewPlus from "../common/SafeAreaViewPlus";
+
 const TRENDING_URL = 'https://github.com/';
 type Props = {};
-const THEME_COLOR = '#678';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import NavigationUtil from "../navigator/NavigationUtil";
 import BackPressComponent from "../common/BackPressComponent";
@@ -99,7 +99,7 @@ export default class DetailPage extends Component<Props> {
             leftButton={ViewUtil.getLeftBackButton(() => this.onBack())}
             titleLayoutStyle={titleLayoutStyle}
             title={this.state.title}
-            style={theme.styles.navBar}
+            style={[styles.navBar, theme.styles.navBar]}
             rightButton={this.renderRightButton()}
         />;
 
@@ -107,13 +107,16 @@ export default class DetailPage extends Component<Props> {
             <SafeAreaViewPlus
                 topColor={theme.themeColor}
             >
-                {navigationBar}
-                <WebView
-                    ref={webView => this.webView = webView}
-                    startInLoadingState={true}
-                    onNavigationStateChange={e => this.onNavigationStateChange(e)}
-                    source={{uri: this.state.url}}
-                />
+                <View style={styles.container}>
+                    <WebView
+                        style={{marginTop: NAVIGATION_BAR_HEIGHT}}
+                        ref={webView => this.webView = webView}
+                        startInLoadingState={true}
+                        onNavigationStateChange={e => this.onNavigationStateChange(e)}
+                        source={{uri: this.state.url}}
+                    />
+                    {navigationBar}
+                </View>
             </SafeAreaViewPlus>
         );
     }
@@ -122,6 +125,10 @@ export default class DetailPage extends Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: DeviceInfo.isIPhoneX_deprecated ? 30 : 0
+    },
+    navBar: {
+        position: 'absolute',
+        left: 0,
+        right: 0
     },
 });
