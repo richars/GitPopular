@@ -22,7 +22,7 @@ class MyPage extends Component<Props> {
             case MORE_MENU.Tutorial:
                 RouteName = 'WebViewPage';
                 params.title = '教程';
-                params.url = 'https://coding.m.imooc.com/classindex.html?cid=89';
+                params.url = 'https://coding.m.imooc.com/classindex.html?cid=304';
                 break;
             case MORE_MENU.About:
                 RouteName = 'AboutPage';

@@ -23,15 +23,22 @@ export default class AboutPage extends Component<Props> {
             data: config,
         }
     }
+    componentDidMount() {
+        this.aboutCommon.componentDidMount();
+    }
+
+    componentWillUnmount() {
+        this.aboutCommon.componentWillUnmount();
+    }
 
     onClick(menu) {
         const {theme} = this.params;
-        let RoutseName, params = {theme};
+        let RouteName, params = {theme};
         switch (menu) {
             case MORE_MENU.Tutorial:
                 RouteName = 'WebViewPage';
                 params.title = '教程';
-                params.url = 'https://coding.m.imooc.com/classindex.html?cid=89';
+                params.url = 'https://coding.m.imooc.com/classindex.html?cid=304';
                 break;
             case MORE_MENU.About_Author:
                 RouteName = 'AboutMePage';
@@ -40,7 +47,6 @@ export default class AboutPage extends Component<Props> {
                 const url = 'mailto://crazycodeboy@gmail.com';
                 Linking.canOpenURL(url)
                     .then(support => {
-                        debugger
                         if (!support) {
                             console.log('Can\'t handle url: ' + url);
                         } else {
