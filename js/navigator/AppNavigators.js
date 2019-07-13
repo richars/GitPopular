@@ -12,7 +12,7 @@ import CodePushPage from '../page/CodePushPage';
 import {connect} from 'react-redux';
 import {createReactNavigationReduxMiddleware, createReduxContainer} from 'react-navigation-redux-helpers';
 
-export const rootCom = 'Init';//设置根路由
+export const rootCom = 'Init';//设置根路由，对应RootNavigator中第一个初始化的路由名
 
 const InitNavigator = createStackNavigator({
     WelcomePage: {
@@ -83,7 +83,7 @@ const MainNavigator = createStackNavigator({
     }
 });
 export const RootNavigator = createAppContainer(createSwitchNavigator({
-    Init: InitNavigator,
+    [rootCom]: InitNavigator,
     Main: MainNavigator,
 }, {
     navigationOptions: {
@@ -105,7 +105,10 @@ export const middleware = createReactNavigationReduxMiddleware(
 /**
  * 2.将根导航器组件传递给 createReduxContainer 函数,
  * 并返回一个将navigation state 和 dispatch 函数作为 props的新组件；
- * 注意：要在createReactNavigationReduxMiddleware之后执行
+ * 注意：
+ * a.要在createReactNavigationReduxMiddleware之后执行
+ * b.key是createReduxContainer用来关联RootNavigator与middleware的
+ * ，所以要和createReactNavigationReduxMiddleware的入参key保持一致
  */
 const AppWithNavigationState = createReduxContainer(RootNavigator, 'root');
 
