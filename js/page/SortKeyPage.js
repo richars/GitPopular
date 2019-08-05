@@ -30,11 +30,11 @@ class SortKeyPage extends Component<Props> {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        const checkedArray = SortKeyPage._keys(nextProps, null, prevState);
-        if (prevState.keys !== checkedArray) {
+        const checkedArray = SortKeyPage._keys(nextProps, prevState);
+        if (prevState.checkedArray !== checkedArray) {
             return {
-                keys: checkedArray,
-            }
+                checkedArray: checkedArray,
+            };
         }
         return null;
     }
