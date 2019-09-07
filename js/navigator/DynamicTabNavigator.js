@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {createBottomTabNavigator, createAppContainer} from "react-navigation";
+import {createAppContainer} from "react-navigation";
+import {createBottomTabNavigator} from "react-navigation-tabs";
 import {connect} from 'react-redux';
 import PopularPage from '../page/PopularPage';
 import TrendingPage from '../page/TrendingPage';

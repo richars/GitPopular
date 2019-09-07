@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {StyleSheet, ActivityIndicator, Text, View, FlatList, RefreshControl,TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import actions from '../action/index'
-import {createMaterialTopTabNavigator,createAppContainer} from "react-navigation";
+import {createAppContainer} from "react-navigation";
+import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import NavigationUtil from '../navigator/NavigationUtil'
 import PopularItem from '../common/PopularItem'
 import Toast from 'react-native-easy-toast'
@@ -82,7 +83,8 @@ class PopularPage extends Component<Props> {
                     scrollEnabled: true,//是否支持 选项卡滚动，默认false
                     style: {
                         backgroundColor: theme.themeColor,//TabBar 的背景颜色
-                        height: 30//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
+                        // 移除以适配react-navigation4x
+                        // height: 30//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
                     },
                     indicatorStyle: styles.indicatorStyle,//标签指示器的样式
                     labelStyle: styles.labelStyle,//文字的样式

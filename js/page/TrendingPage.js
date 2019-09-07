@@ -7,27 +7,28 @@ import {
     View,
     FlatList,
     RefreshControl,
-    DeviceEventEmitter
+    DeviceEventEmitter,
 } from 'react-native';
 import {connect} from 'react-redux';
-import actions from '../action/index'
-import {createMaterialTopTabNavigator, createAppContainer} from "react-navigation";
-import NavigationUtil from '../navigator/NavigationUtil'
-import TrendingItem from '../common/TrendingItem'
-import Toast from 'react-native-easy-toast'
+import actions from '../action/index';
+import {createAppContainer} from 'react-navigation';
+import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
+import NavigationUtil from '../navigator/NavigationUtil';
+import TrendingItem from '../common/TrendingItem';
+import Toast from 'react-native-easy-toast';
 import NavigationBar from '../common/NavigationBar';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const EVENT_TYPE_TIME_SPAN_CHANGE = "EVENT_TYPE_TIME_SPAN_CHANGE";
+const EVENT_TYPE_TIME_SPAN_CHANGE = 'EVENT_TYPE_TIME_SPAN_CHANGE';
 const URL = 'https://github.com/trending/';
-import TrendingDialog, {TimeSpans} from '../common/TrendingDialog'
-import FavoriteUtil from "../util/FavoriteUtil";
-import {FLAG_STORAGE} from "../expand/dao/DataStore";
-import FavoriteDao from "../expand/dao/FavoriteDao";
-import EventBus from "react-native-event-bus";
-import EventTypes from "../util/EventTypes";
-import {FLAG_LANGUAGE} from "../expand/dao/LanguageDao";
-import ArrayUtil from "../util/ArrayUtil";
+import TrendingDialog, {TimeSpans} from '../common/TrendingDialog';
+import FavoriteUtil from '../util/FavoriteUtil';
+import {FLAG_STORAGE} from '../expand/dao/DataStore';
+import FavoriteDao from '../expand/dao/FavoriteDao';
+import EventBus from 'react-native-event-bus';
+import EventTypes from '../util/EventTypes';
+import {FLAG_LANGUAGE} from '../expand/dao/LanguageDao';
+import ArrayUtil from '../util/ArrayUtil';
 
 const favoriteDao = new FavoriteDao(FLAG_STORAGE.flag_trending);
 type Props = {};
@@ -54,9 +55,9 @@ class TrendingPage extends Component<Props> {
                     screen: props => <TrendingTabPage {...props} timeSpan={this.state.timeSpan} tabLabel={item.name}
                                                       theme={theme}/>,//初始化Component时携带默认参数 @https://github.com/react-navigation/react-navigation/issues/2392
                     navigationOptions: {
-                        title: item.name
-                    }
-                }
+                        title: item.name,
+                    },
+                };
             }
         });
         return tabs;
@@ -71,7 +72,7 @@ class TrendingPage extends Component<Props> {
                     <Text style={{
                         fontSize: 18,
                         color: '#FFFFFF',
-                        fontWeight: '400'
+                        fontWeight: '400',
                     }}>趋势 {this.state.timeSpan.showText}</Text>
                     <MaterialIcons
                         name={'arrow-drop-down'}
@@ -80,13 +81,13 @@ class TrendingPage extends Component<Props> {
                     />
                 </View>
             </TouchableOpacity>
-        </View>
+        </View>;
     }
 
     onSelectTimeSpan(tab) {
         this.dialog.dismiss();
         this.setState({
-            timeSpan: tab
+            timeSpan: tab,
         });
         DeviceEventEmitter.emit(EVENT_TYPE_TIME_SPAN_CHANGE, tab);
     }
@@ -95,7 +96,7 @@ class TrendingPage extends Component<Props> {
         return <TrendingDialog
             ref={dialog => this.dialog = dialog}
             onSelect={tab => this.onSelectTimeSpan(tab)}
-        />
+        />;
     }
 
     _tabNav() {
@@ -111,13 +112,14 @@ class TrendingPage extends Component<Props> {
                         scrollEnabled: true,//是否支持 选项卡滚动，默认false
                         style: {
                             backgroundColor: theme.themeColor,//TabBar 的背景颜色
-                            height: 30//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
+                            // 移除以适配react-navigation4x
+                            // height: 30,//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
                         },
                         indicatorStyle: styles.indicatorStyle,//标签指示器的样式
                         labelStyle: styles.labelStyle,//文字的样式
                     },
-                    lazy: true
-                }
+                    lazy: true,
+                },
             ));
         }
         return this.tabNav;
@@ -139,7 +141,7 @@ class TrendingPage extends Component<Props> {
             {navigationBar}
             {TabNavigator && <TabNavigator/>}
             {this.renderTrendingDialog()}
-        </View>
+        </View>;
     }
 }
 
@@ -148,7 +150,7 @@ const mapTrendingStateToProps = state => ({
     theme: state.theme.theme,
 });
 const mapTrendingDispatchToProps = dispatch => ({
-    onLoadLanguage: (flag) => dispatch(actions.onLoadLanguage(flag))
+    onLoadLanguage: (flag) => dispatch(actions.onLoadLanguage(flag)),
 });
 //注意：connect只是个function，并不应定非要放在export后面
 export default connect(mapTrendingStateToProps, mapTrendingDispatchToProps)(TrendingPage);
@@ -177,7 +179,7 @@ class TrendingTab extends Component<Props> {
             if (data.to === 1 && this.isFavoriteChanged) {
                 this.loadData(null, true);
             }
-        })
+        });
     }
 
     componentWillUnmount() {
@@ -195,12 +197,12 @@ class TrendingTab extends Component<Props> {
         if (loadMore) {
             onLoadMoreTrending(this.storeName, ++store.pageIndex, pageSize, store.items, favoriteDao, callback => {
                 this.refs.toast.show('没有更多了');
-            })
+            });
         } else if (refreshFavorite) {
             onFlushTrendingFavorite(this.storeName, store.pageIndex, pageSize, store.items, favoriteDao);
             this.isFavoriteChanged = false;
         } else {
-            onRefreshTrending(this.storeName, url, pageSize, favoriteDao)
+            onRefreshTrending(this.storeName, url, pageSize, favoriteDao);
         }
     }
 
@@ -218,7 +220,7 @@ class TrendingTab extends Component<Props> {
                 isLoading: false,
                 projectModels: [],//要显示的数据
                 hideLoadingMore: true,//默认隐藏加载更多
-            }
+            };
         }
         return store;
     }
@@ -239,10 +241,10 @@ class TrendingTab extends Component<Props> {
                     projectModel: item,
                     flag: FLAG_STORAGE.flag_trending,
                     callback,
-                }, 'DetailPage')
+                }, 'DetailPage');
             }}
             onFavorite={(item, isFavorite) => FavoriteUtil.onFavorite(favoriteDao, item, isFavorite, FLAG_STORAGE.flag_trending)}
-        />
+        />;
     }
 
     genIndicator() {
@@ -252,7 +254,7 @@ class TrendingTab extends Component<Props> {
                     style={styles.indicator}
                 />
                 <Text>正在加载更多</Text>
-            </View>
+            </View>;
     }
 
     render() {
@@ -263,7 +265,7 @@ class TrendingTab extends Component<Props> {
                 <FlatList
                     data={store.projectModels}
                     renderItem={data => this.renderItem(data)}
-                    keyExtractor={item => "" + item.item.fullName}
+                    keyExtractor={item => '' + item.item.fullName}
                     refreshControl={
                         <RefreshControl
                             title={'Loading'}
@@ -287,7 +289,7 @@ class TrendingTab extends Component<Props> {
                     onEndReachedThreshold={0.5}
                     onMomentumScrollBegin={() => {
                         this.canLoadMore = true; //fix 初始化时页调用onEndReached的问题
-                        console.log('---onMomentumScrollBegin-----')
+                        console.log('---onMomentumScrollBegin-----');
                     }}
                 />
                 <Toast ref={'toast'}
@@ -299,7 +301,7 @@ class TrendingTab extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-    trending: state.trending
+    trending: state.trending,
 });
 const mapDispatchToProps = dispatch => ({
     //将 dispatch(onRefreshPopular(storeName, url))绑定到props
@@ -308,7 +310,7 @@ const mapDispatchToProps = dispatch => ({
     onFlushTrendingFavorite: (storeName, pageIndex, pageSize, items, favoriteDao) => dispatch(actions.onFlushTrendingFavorite(storeName, pageIndex, pageSize, items, favoriteDao)),
 });
 //注意：connect只是个function，并不应定非要放在export后面
-const TrendingTabPage = connect(mapStateToProps, mapDispatchToProps)(TrendingTab)
+const TrendingTabPage = connect(mapStateToProps, mapDispatchToProps)(TrendingTab);
 
 
 const styles = StyleSheet.create({
@@ -317,21 +319,21 @@ const styles = StyleSheet.create({
     },
     tabStyle: {
         // minWidth: 50 //fix minWidth会导致tabStyle初次加载时闪烁
-        padding: 0
+        padding: 0,
     },
     indicatorStyle: {
         height: 2,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     },
     labelStyle: {
         fontSize: 13,
         margin: 0,
     },
     indicatorContainer: {
-        alignItems: "center"
+        alignItems: 'center',
     },
     indicator: {
         color: 'red',
-        margin: 10
-    }
+        margin: 10,
+    },
 });

@@ -1,25 +1,26 @@
 import React, {Component} from 'react';
 import {FlatList, RefreshControl, StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
-import actions from '../action/index'
-import {createMaterialTopTabNavigator, createAppContainer} from "react-navigation";
-import NavigationUtil from '../navigator/NavigationUtil'
-import PopularItem from '../common/PopularItem'
-import Toast from 'react-native-easy-toast'
+import actions from '../action/index';
+import {createAppContainer} from 'react-navigation';
+import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
+import NavigationUtil from '../navigator/NavigationUtil';
+import PopularItem from '../common/PopularItem';
+import Toast from 'react-native-easy-toast';
 import NavigationBar from '../common/NavigationBar';
-import FavoriteDao from "../expand/dao/FavoriteDao";
-import {FLAG_STORAGE} from "../expand/dao/DataStore";
-import FavoriteUtil from "../util/FavoriteUtil";
-import TrendingItem from "../common/TrendingItem";
-import EventBus from "react-native-event-bus";
-import EventTypes from "../util/EventTypes";
+import FavoriteDao from '../expand/dao/FavoriteDao';
+import {FLAG_STORAGE} from '../expand/dao/DataStore';
+import FavoriteUtil from '../util/FavoriteUtil';
+import TrendingItem from '../common/TrendingItem';
+import EventBus from 'react-native-event-bus';
+import EventTypes from '../util/EventTypes';
 
 type Props = {};
 
 class FavoritePage extends Component<Props> {
     constructor(props) {
         super(props);
-        console.log(NavigationUtil.navigation)
+        console.log(NavigationUtil.navigation);
     }
 
 
@@ -53,17 +54,18 @@ class FavoritePage extends Component<Props> {
                     upperCaseLabel: false,//是否使标签大写，默认为true
                     style: {
                         backgroundColor: theme.themeColor,//TabBar 的背景颜色
-                        height: 30//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
+                        // 移除以适配react-navigation4x
+                        // height: 30,//fix 开启scrollEnabled后再Android上初次加载时闪烁问题
                     },
                     indicatorStyle: styles.indicatorStyle,//标签指示器的样式
                     labelStyle: styles.labelStyle,//文字的样式
-                }
-            }
+                },
+            },
         ));
         return <View style={styles.container}>
             {navigationBar}
             <TabNavigator/>
-        </View>
+        </View>;
     }
 }
 
@@ -87,7 +89,7 @@ class FavoriteTab extends Component<Props> {
             if (data.to === 2) {
                 this.loadData(false);
             }
-        })
+        });
     }
 
     componentWillUnmount() {
@@ -96,7 +98,7 @@ class FavoriteTab extends Component<Props> {
 
     loadData(isShowLoading) {
         const {onLoadFavoriteData} = this.props;
-        onLoadFavoriteData(this.storeName, isShowLoading)
+        onLoadFavoriteData(this.storeName, isShowLoading);
     }
 
     /**
@@ -112,7 +114,7 @@ class FavoriteTab extends Component<Props> {
                 items: [],
                 isLoading: false,
                 projectModels: [],//要显示的数据
-            }
+            };
         }
         return store;
     }
@@ -139,10 +141,10 @@ class FavoriteTab extends Component<Props> {
                     projectModel: item,
                     flag: this.storeName,
                     callback,
-                }, 'DetailPage')
+                }, 'DetailPage');
             }}
             onFavorite={(item, isFavorite) => this.onFavorite(item, isFavorite)}
-        />
+        />;
     }
 
     render() {
@@ -153,7 +155,7 @@ class FavoriteTab extends Component<Props> {
                 <FlatList
                     data={store.projectModels}
                     renderItem={data => this.renderItem(data)}
-                    keyExtractor={item => "" + (item.item.id || item.item.fullName)}
+                    keyExtractor={item => '' + (item.item.id || item.item.fullName)}
                     refreshControl={
                         <RefreshControl
                             title={'Loading'}
@@ -192,21 +194,21 @@ const styles = StyleSheet.create({
     },
     tabStyle: {
         // minWidth: 50 //fix minWidth会导致tabStyle初次加载时闪烁
-        padding: 0
+        padding: 0,
     },
     indicatorStyle: {
         height: 2,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     },
     labelStyle: {
         fontSize: 13,
         margin: 0,
     },
     indicatorContainer: {
-        alignItems: "center"
+        alignItems: 'center',
     },
     indicator: {
         color: 'red',
-        margin: 10
-    }
+        margin: 10,
+    },
 });
