@@ -47,7 +47,8 @@ class PopularPage extends Component<Props> {
         const {theme} = this.props;
         return <TouchableOpacity
             onPress={() => {
-                AnalyticsUtil.track("SearchButtonClick");
+                //新版本友盟SDK 时间统计方法由 track -> onEvent
+                AnalyticsUtil.onEvent("SearchButtonClick");
                 NavigationUtil.goPage({theme}, 'SearchPage')
             }}
         >

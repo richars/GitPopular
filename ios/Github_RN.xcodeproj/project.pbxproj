@@ -20,6 +20,9 @@
 		4EB6171B5E0DF267DD35D9CB /* libPods-Github_RNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5384D94303BBD2CBF9790C /* libPods-Github_RNTests.a */; };
 		6B26738A538884BA65EBD621 /* libPods-Github_RN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C90BB94F8911C4D9B15A7B /* libPods-Github_RN.a */; };
 		B9207D73EE10C0A24E94A34A /* libPods-Github_RN-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D5D4C68523C332D4CB518D /* libPods-Github_RN-tvOS.a */; };
+		F490D726231EA88500450487 /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F490D720231EA88500450487 /* RNUMConfigure.m */; };
+		F490D727231EA88500450487 /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F490D721231EA88500450487 /* UMAnalyticsModule.m */; };
+		F490D728231EA88500450487 /* UMShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F490D723231EA88500450487 /* UMShareModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,12 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F0FC8CDCFA6006AC99CF2C28 /* Pods-Github_RN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github_RN.debug.xcconfig"; path = "Target Support Files/Pods-Github_RN/Pods-Github_RN.debug.xcconfig"; sourceTree = "<group>"; };
 		F44B88F9231E325300D92A5C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F490D720231EA88500450487 /* RNUMConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNUMConfigure.m; path = Github_RN/RNUMConfigure.m; sourceTree = "<group>"; };
+		F490D721231EA88500450487 /* UMAnalyticsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMAnalyticsModule.m; path = Github_RN/UMAnalyticsModule.m; sourceTree = "<group>"; };
+		F490D722231EA88500450487 /* UMShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMShareModule.h; path = Github_RN/UMShareModule.h; sourceTree = "<group>"; };
+		F490D723231EA88500450487 /* UMShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UMShareModule.m; path = Github_RN/UMShareModule.m; sourceTree = "<group>"; };
+		F490D724231EA88500450487 /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNUMConfigure.h; path = Github_RN/RNUMConfigure.h; sourceTree = "<group>"; };
+		F490D725231EA88500450487 /* UMAnalyticsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMAnalyticsModule.h; path = Github_RN/UMAnalyticsModule.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +140,12 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				F44B88F9231E325300D92A5C /* Constants.h */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				F490D724231EA88500450487 /* RNUMConfigure.h */,
+				F490D720231EA88500450487 /* RNUMConfigure.m */,
+				F490D725231EA88500450487 /* UMAnalyticsModule.h */,
+				F490D721231EA88500450487 /* UMAnalyticsModule.m */,
+				F490D722231EA88500450487 /* UMShareModule.h */,
+				F490D723231EA88500450487 /* UMShareModule.m */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -407,6 +422,8 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -426,6 +443,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -587,8 +606,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F490D728231EA88500450487 /* UMShareModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				F490D727231EA88500450487 /* UMAnalyticsModule.m in Sources */,
+				F490D726231EA88500450487 /* RNUMConfigure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
