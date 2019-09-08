@@ -1,18 +1,17 @@
 
-号外号外，RN0.6x已经发布有一段时间了，react-navigation也在前不久进入了4x的时代。为了让大家少踩坑
-现已将课程升级是配到RN0.6x以及react-navigation4x，另外，包括友盟分享和统计在内的所有插件也已升级是配到最新版。
+号外号外，RN0.6x已经发布有一段时间了，react-navigation也在前不久进入了4x的时代。为了让大家少踩坑，现已将课程升级适配到RN0.6x以及react-navigation4x，另外，包括友盟分享和统计在内的所有插件也已升级是配到最新版。
 
-为了帮助到大家顺利的学习使用新版本RN与react-navigation等相关库，我将整个的升级适配过程总结出一下文档供
-小伙伴们参考学习：
+为了帮助到大家顺利的学习使用新版本RN与react-navigation等相关库，我将整个的升级适配过程总结出以下文档供小伙伴们学习参考：
 
 1. react-native 0.6x升级适配说明
 2. react-navigation 4x升级适配说明
-3. 友盟分享和统计最新版 升级适配说明
+3. 友盟分享和统计最新版升级适配说明
 4. 其他升级适配说明
+5. FAQ
 
 ## 1.react-native 0.6x升级适配说明
 
-本次为了将项目从0.59.9升级适配到0.6x，由于变更跨度比较大，顾采用了“创建一个新的RN项目，然后将代码移植到这个RN项目”的方式进行升级适配的，变更了那些代码，可查看提交记录：[c0d8d0b5]()
+本次为了将项目从0.59.9升级适配到0.6x，由于变更跨度比较大，顾采用了“创建一个新的RN项目，然后将代码移植到这个RN项目”的方式进行升级适配的，变更了那些代码，可查看提交记录：[c0d8d0b5](https://git.imooc.com/coding-304/GitHub_Advanced/commit/c0d8d0b571bfbc93a3abb2506489f5a822c36838)
 
 ### 1.1 0.6x版本重大特性
 - 0.61.0
@@ -158,7 +157,7 @@ public class MainActivity extends ReactActivity {
 
 现已将项目中所用到的友盟分享、登录和统计相关的库和代码升级到了最新版，并且做了相应适配。
 
->大家在集成适配最新友盟分享、登录和统计时可参考这次提交：[6cc61494]()
+>大家在集成适配最新友盟分享、登录和统计时可参考这次提交：[6cc61494](https://git.imooc.com/coding-304/GitHub_Advanced/commit/6cc6149449e1bcd67adb9d4d8ec9b599a41b92a1)
 
 ### 重要变更
 
@@ -199,7 +198,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 其他API不变。
 
-## FAQ
+## 5.FAQ
 
 ### Cannot get property 'supportLibVersion' on extra properties extension as it does not exist
 

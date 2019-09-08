@@ -11,10 +11,11 @@
 
 ## 如何运行？
 
-1. 在项目根目录执行`npm install`或`yarn install`;
-2. 切换到ios目录下执行`pod install`;
-3. 然后运行 react-native run-ios 或 react-native run-android；
-4. Ok,有问题可以提issues出来;
+1. 在项目根目录执行`npm install`或`yarn install`；
+2. 切换到ios目录下执行`pod setup`来拉取最新pod库；
+3. ios目录下执行`pod install`来安装iOS项目所需要的依赖；
+4. 然后运行 react-native run-ios 或 react-native run-android；
+5. Ok,有问题可以提issues出来；
 
 ## 课程辅导答疑
 
@@ -22,8 +23,9 @@
 
 ## 更新日志
 
-#### 2019-09-07：重大升级！react-native 0.6x，react-navigation 4x 以及其他所有依赖库升级适配到最新版本
-    - [点我查看升级适配说明](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/doc/RN0.6x_react_navigation4x等升级适配说明.md)
+#### 2019-09-08：重大升级！react-native 0.6x，react-navigation 4x 以及其他所有依赖库升级适配到最新版本
+
+- [点我查看升级适配说明](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/doc/RN0.6x_react_navigation4x等升级适配说明.md)
 
 
 #### 2019-06-21：优化详情页webview兼容问题；升级GitHubTrending；升级react-navigation & react-navigation-tabs到最新版-解决Android下点击切换问题；
