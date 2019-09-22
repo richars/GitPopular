@@ -930,10 +930,10 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
-"@react-navigation/core@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.npm.taobao.org/@react-navigation/core/download/@react-navigation/core-3.5.0.tgz#73d1a12448e2bd71855e0080b95a7f51ede0cd9e"
-  integrity sha1-c9GhJEjivXGFXgCAuVp/Ue3gzZ4=
+"@react-navigation/core@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
+  integrity sha512-q7NyhWVYOhVIWqL2GZKa6G78YarXaVTTtOlSDkvy4ZIggo40wZzamlnrJRvsaQX46gsgw45FAWb5SriHh8o7eA==
   dependencies:
     hoist-non-react-statics "^3.3.0"
     path-to-regexp "^1.7.0"
@@ -1072,10 +1072,10 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-GitHubTrending@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.npm.taobao.org/GitHubTrending/download/GitHubTrending-3.1.1.tgz#34e8709d8d6b7c97642e0d2039259be24ede97a0"
-  integrity sha1-NOhwnY1rfJdkLg0gOSWb4k7el6A=
+GitHubTrending@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/GitHubTrending/-/GitHubTrending-3.1.2.tgz#324072536bdf276506da47cd2c1fe8d8855ebb17"
+  integrity sha512-NRjkZ85CpPInjzv3DvWpBsZ6BaxCuEU/GDChCh4DuOgly2wzYU9LNTvXgCh58xR5BJ9DBjgzRmMzvk/Q/++1Vg==
 
 abab@^2.0.0:
   version "2.0.1"
@@ -5620,8 +5620,8 @@ react-native-event-bus@^1.0.0:
 
 react-native-gesture-handler@^1.4.1:
   version "1.4.1"
-  resolved "https://registry.npm.taobao.org/react-native-gesture-handler/download/react-native-gesture-handler-1.4.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native-gesture-handler%2Fdownload%2Freact-native-gesture-handler-1.4.1.tgz#c38d9e57637b95e221722a79f2bafac62e3aeb21"
-  integrity sha1-w42eV2N7leIhcip58rr6xi466yE=
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.4.1.tgz#c38d9e57637b95e221722a79f2bafac62e3aeb21"
+  integrity sha512-Ffcs+SbEbkGaal0CClYL+v7A9y4OA5G5lW01qrzjxaqASp5C8BfnWSKuqYKE00s6bLwE5L4xnlHkG0yIxAtbrQ==
   dependencies:
     hammerjs "^2.0.8"
     hoist-non-react-statics "^2.3.1"
@@ -5645,8 +5645,8 @@ react-native-parallax-scroll-view@^0.21.3:
 
 react-native-reanimated@^1.2.0:
   version "1.2.0"
-  resolved "https://registry.npm.taobao.org/react-native-reanimated/download/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
-  integrity sha1-khkielKl36TTTDJFltZybM2HQpM=
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
+  integrity sha512-vkWRHrPK5qfHP/ZawlRoo38oeYe9NZaaOH/lmFxRcsKzaSK6x3H5ZPXI8lK6MfTLveqwo1QhJje3zIKXO4nQQw==
 
 react-native-safe-area-view@^0.14.1:
   version "0.14.7"
@@ -5754,12 +5754,12 @@ react-navigation-tabs@^2.3.0:
     react-lifecycles-compat "^3.0.4"
     react-native-tab-view "^2.9.0"
 
-react-navigation@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/react-navigation/download/react-navigation-4.0.0.tgz#b83faf5490c26ef126e384bac7a2e755fe6ef777"
-  integrity sha1-uD+vVJDCbvEm44S6x6LnVf5u93c=
+react-navigation@^4.0.7:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-4.0.7.tgz#cc7ce334fef009242494d623e50e9cf79eb63ddd"
+  integrity sha512-0tTWanq870Hyr1VGHuj98+myRHNQnKgpRgjgzhAwVuLShyPIB9OnoLGIwIcqEdxgxGo+JMFmIGg8KCr7xapfgg==
   dependencies:
-    "@react-navigation/core" "^3.5.0"
+    "@react-navigation/core" "^3.5.1"
     "@react-navigation/native" "^3.6.2"
 
 react-redux@^7.1.1:
