@@ -319,8 +319,9 @@ apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 ```
 参考：[https://github.com/Microsoft/react-native-code-push/issues/1046](https://github.com/Microsoft/react-native-code-push/issues/1046)
 
-## Unrecognized font family 'Ionicons' 
+## Unrecognized font family 'Ionicons' or 'MaterialIcons'
 #### 问题描述
+启动iOS APP报错，无法加载字体文件：
 
 >版本信息：
 
@@ -354,6 +355,7 @@ apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
   <string>Zocial.ttf</string>
 </array>
 ```
+然后，重新运行项目，如果问题依旧，用Xcode打开`Github_RN.xcworkspace`，然后改为用Xcode运行项目。
 
 参考：[https://github.com/oblador/react-native-vector-icons#option-manually](https://github.com/oblador/react-native-vector-icons#installation)
 
