@@ -333,6 +333,18 @@ apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 #### 解决办法
 
+>第一步：
+
+切换到ios目录执行install：
+
+```bash
+cd ios
+pod install
+```
+
+>第二步：
+
+
 将下面配置粘贴到info.plist：
  
 ```
