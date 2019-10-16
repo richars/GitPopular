@@ -1,5 +1,8 @@
 实战课[最新版react native+redux打造高质量上线app](https://coding.imooc.com/class/304.html)
 
+**号外号外，为了帮助大家更好的学习RN，课程近期会进行更新，预计更新时长4小时，可以关注下课程首页和仓库首页的更新！**
+
+
 >课程已升级适配react-native 0.6x，react-navigation 4x，[点我查看](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/doc/RN0.6x_react_navigation4x等升级适配说明.md)
 
 ## 概述
