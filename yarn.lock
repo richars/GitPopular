@@ -2460,10 +2460,10 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0:
   resolved "https://registry.npm.taobao.org/eslint-visitor-keys/download/eslint-visitor-keys-1.1.0.tgz?cache=0&sync_timestamp=1565705523991&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-visitor-keys%2Fdownload%2Feslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha1-4qgs6oT/JGrW+1f5veW0ZiFFnsI=
 
-eslint@^6.2.2:
-  version "6.3.0"
-  resolved "https://registry.npm.taobao.org/eslint/download/eslint-6.3.0.tgz#1f1a902f67bfd4c354e7288b81e40654d927eb6a"
-  integrity sha1-HxqQL2e/1MNU5yiLgeQGVNkn62o=
+eslint@^6.5.1:
+  version "6.5.1"
+  resolved "https://registry.npm.taobao.org/eslint/download/eslint-6.5.1.tgz#828e4c469697d43bb586144be152198b91e96ed6"
+  integrity sha1-go5MRpaX1Du1hhRL4VIZi5HpbtY=
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.10.0"
@@ -3182,10 +3182,10 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hermes-engine@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.npm.taobao.org/hermes-engine/download/hermes-engine-0.1.1.tgz#33d5da1a3b7289667f121dc1aca3566171e86fd8"
-  integrity sha1-M9XaGjtyiWZ/Eh3BrKNWYXHob9g=
+hermes-engine@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npm.taobao.org/hermes-engine/download/hermes-engine-0.2.1.tgz#25c0f1ff852512a92cb5c5cc47cf967e1e722ea2"
+  integrity sha1-JcDx/4UlEqkstcXMR8+Wfh5yLqI=
 
 hoist-non-react-statics@^2.3.1:
   version "2.5.5"
@@ -5696,10 +5696,10 @@ react-native-webview@^7.0.2:
     escape-string-regexp "1.0.5"
     invariant "2.2.4"
 
-react-native@0.61.0-rc.0:
-  version "0.61.0-rc.0"
-  resolved "https://registry.npm.taobao.org/react-native/download/react-native-0.61.0-rc.0.tgz?cache=0&sync_timestamp=1566917136077&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native%2Fdownload%2Freact-native-0.61.0-rc.0.tgz#5f376fefee982c463eee52d691a8bdb7a37650c2"
-  integrity sha1-Xzdv7+6YLEY+7lLWkai9t6N2UMI=
+react-native@0.61.2:
+  version "0.61.2"
+  resolved "https://registry.npm.taobao.org/react-native/download/react-native-0.61.2.tgz#987b91b063557f8ebec803fdfea2044a24bdbe4d"
+  integrity sha1-mHuRsGNVf46+yAP9/qIESiS9vk0=
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@react-native-community/cli" "^3.0.0-alpha.1"
@@ -5714,7 +5714,7 @@ react-native@0.61.0-rc.0:
     event-target-shim "^5.0.1"
     fbjs "^1.0.0"
     fbjs-scripts "^1.1.0"
-    hermes-engine "^0.1.1"
+    hermes-engine "^0.2.1"
     invariant "^2.2.4"
     jsc-android "^245459.0.0"
     metro-babel-register "^0.56.0"
