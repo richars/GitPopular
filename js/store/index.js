@@ -1,7 +1,6 @@
 import {applyMiddleware, createStore} from 'redux'
 import thunk from 'redux-thunk'
 import reducers from '../reducer'
-import {middleware} from '../navigator/AppNavigators'
 
 /**
  * 自定义log中间件
@@ -20,7 +19,6 @@ const logger = store => next => action => {
 };
 
 const middlewares = [
-    middleware,
     logger,
     thunk,
 ];
