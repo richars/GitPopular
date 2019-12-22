@@ -1,9 +1,14 @@
 实战课[最新版react native+redux打造高质量上线app](https://coding.imooc.com/class/304.html)
 
+**温馨提示：**
+
+>课程最新升级第4章、5章的代码在[for_future](https://git.imooc.com/coding-304/GitHub_Advanced/src/for_future)单独分支上。
+
 **号外号外，为了帮助大家更好的学习RN，我们对课程进行更新，算是送个小伙伴们的1024礼物**
 
 
 >课程已升级适配react-native 0.6x，react-navigation 4x，[点我查看](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/doc/RN0.6x_react_navigation4x等升级适配说明.md)
+
 
 ## 概述
 - 课程文档查看[doc](https://git.imooc.com/coding-304/GitHub_Advanced/src/master/doc);
