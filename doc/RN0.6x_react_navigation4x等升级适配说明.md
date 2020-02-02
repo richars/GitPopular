@@ -48,7 +48,7 @@
 
 RN社区提供了一个查看不同版本间升级变更的小助手：叫 [upgrade helper webtool](https://react-native-community.github.io/upgrade-helper/)，通过它你能快速查看你当前的RN版到你要升级到的RN版本间的所有变更和需要注意的点，比如：从0.59.9到0.61.0-rc.0的变更内容：[0.59.9 -> 0.61.0-rc.0](https://react-native-community.github.io/upgrade-helper/?from=0.59.9&to=0.61.0-rc.0)。
 
-## 2. react-navigation 4x升级适配说明
+## 2. react-navigation 4x安装及升级适配说明
 
 react-navigation从发布以来经历了1x，2x，3x的重要变更，现在已经到了4x的阶段，4x相比3x最为重大的变更点如下：
 
@@ -87,9 +87,15 @@ yarn add react-navigation
 ```bash
 yarn add react-native-gesture-handler
 yarn add react-native-reanimated
+yarn add react-native-safe-area-context
+yarn add @react-native-community/masked-view
+yarn add react-native-screens
 # or with npm
 # npm install react-native-gesture-handler
 # npm install react-native-reanimated
+# npm install react-native-safe-area-context
+# npm install @react-native-community/masked-view
+# npm install react-native-screens
 ```
 
 #### 第三步： 根据需要引入各导航组件的库
@@ -114,7 +120,16 @@ pod install
 cd ..
 ```
 
-#### 第五步：配置react-native-gesture-handler
+#### 第五步：为react-native-screens添加相关依赖
+
+为了在Android上完成安装，还需要在`android/app/build.gradle`中为`react-native-screens`添加相关依赖：
+
+```bash
+implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
+```
+
+#### 第六步：配置react-native-gesture-handler
 
 为了在Android上能够使react-native-gesture-handler有效，需要修改MainActivity.java：
 
@@ -143,6 +158,12 @@ public class MainActivity extends ReactActivity {
 +    };
 +  }
 }
+```
+
+#### 第七步：在`index.js` or `App.js`中导入`react-native-gesture-handler`
+
+```bash
+import 'react-native-gesture-handler';
 ```
   
 #### 已知兼容问题
