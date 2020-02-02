@@ -162,7 +162,7 @@ export const AppStackNavigator = createStackNavigator(
             screen: BottomTabNavigator,
             navigationOptions: {
                 title: '底部导航器',
-                header: null
+                headerShown: false
             }
         },
         Page1: {
@@ -203,7 +203,7 @@ export const AppStackNavigator = createStackNavigator(
     },
     {
         defaultNavigationOptions: {//全局默认属性，对当前导航器的所有页面有效
-            // header: null //可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            //headerShown: false //可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         }
     }
 );

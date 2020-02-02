@@ -18,7 +18,7 @@ const InitNavigator = createStackNavigator({
     WelcomePage: {
         screen: WelcomePage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
 });
@@ -26,60 +26,60 @@ const MainNavigator = createStackNavigator({
     HomePage: {
         screen: HomePage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     DetailPage: {
         screen: DetailPage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     WebViewPage: {
         screen: WebViewPage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     AboutPage: {
         screen: AboutPage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     AboutMePage: {
         screen: AboutMePage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     CustomKeyPage: {
         screen: CustomKeyPage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     SortKeyPage: {
         screen: SortKeyPage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     SearchPage: {
         screen: SearchPage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
     CodePushPage: {
         screen: CodePushPage,
         navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         },
     },
 }, {
     defaultNavigationOptions: {
-        header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+        headerShown: false,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
     },
 });
 export default createAppContainer(createSwitchNavigator({
@@ -87,6 +87,6 @@ export default createAppContainer(createSwitchNavigator({
     Main: MainNavigator,
 }, {
     navigationOptions: {
-        header: null,
+        headerShown: false,
     },
 }));

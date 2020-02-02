@@ -55,7 +55,7 @@ react-navigation从发布以来经历了1x，2x，3x的重要变更，现在已�
 >建议，结合[react-navigation官方安装文档](https://reactnavigation.org/docs/en/getting-started.html)在借助下面教程进行学习。
 
 ### 2.1 4x版本重大特性
-
+- navigationOptions的`header: null`API被废弃，改为`headerShown: false`替代
 - navigator被拆分到不同的库中：
     - createStackNavigator -> [react-navigation-stack](https://github.com/react-navigation/stack)
     - createDrawerNavigator -> [react-navigation-drawer](https://github.com/react-navigation/drawer)
