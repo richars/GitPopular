@@ -31,6 +31,9 @@
 [http://coding.imooc.com/learn/qa/304.html](http://coding.imooc.com/learn/qa/304.html)
 
 ## 更新日志
+### 2020-02-19：GitHubTrending 升级以适配最新https://github.com/trending的版面
+- 升级 GitHubTrending 到 ^3.1.5 
+- **升级后需要先卸载APP然后在运行**
 
 ### 2020-02-09：文档教程&代码更新，下面是具体的更新内容
 - 升级react-navigation 到^4.1.1 及以上版本
